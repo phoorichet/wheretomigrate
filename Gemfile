@@ -36,3 +36,17 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+#
+#
+# # D3 Library
+# https://github.com/iblue/d3-rails
+gem 'd3-rails'
+
+
+# Bootstrap 3
+gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
+
+
+# Angular
+gem 'angularjs-rails'
+

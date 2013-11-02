@@ -20,6 +20,23 @@ ActiveRecord::Schema.define(:version => 20131102225614) do
     t.float    "longitude"
     t.integer  "population"
     t.integer  "numberJobs"
+
+ActiveRecord::Schema.define(:version => 20131102230650) do
+
+  create_table "cities", :force => true do |t|
+    t.string   "zip_code"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "city"
+    t.string   "state"
+    t.string   "county"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "counties", :force => true do |t|
+    t.string   "name"
+
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

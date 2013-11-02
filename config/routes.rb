@@ -3,9 +3,16 @@ Wheretomigrate::Application.routes.draw do
 
 
     root :to => 'Home#index'
+  resources :cities
+
+
+  resources :counties
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
+
+  root :to => "static_pages#main"
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
