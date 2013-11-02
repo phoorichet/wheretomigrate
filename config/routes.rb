@@ -1,8 +1,7 @@
 Wheretomigrate::Application.routes.draw do
-  resources :jobs_cities
+    resources :jobs_cities
 
 
-    root :to => 'Home#index'
   resources :cities
 
 
