@@ -1,4 +1,7 @@
 Wheretomigrate::Application.routes.draw do
+  resources :counties
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
