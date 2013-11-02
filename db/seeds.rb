@@ -14,3 +14,11 @@ csv.each do |row|
   County.create(id: row['GEO.id2'], name: row['GEO.display-label'])
   # County.create!(row.to_hash)
 end
+
+
+
+# For citi model
+require 'wtl/city_us'
+
+###load_city_seed()
+ 
