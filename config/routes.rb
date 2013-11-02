@@ -1,4 +1,9 @@
 Wheretomigrate::Application.routes.draw do
+  resources :jobs_cities
+
+
+    root :to => 'Home#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

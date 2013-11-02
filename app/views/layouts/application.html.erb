@@ -10,5 +10,62 @@
 
 <%= yield %>
 
+
+
+      <input id="location" value="" /><<button  onclick="postText()">Update</button> '
+
+
+
+
+
 </body>
+
+
+<script>
+
+function postText() {
+
+function getRandomQuote(callback) {
+    $.ajax({
+        url: 'http://api.careerbuilder.com/v1/jobsearch',
+        type: 'GET',
+         data: {
+       
+        'DeveloperKey': "WDHL04X6PSQYRX0JT0MS", 
+        'Category': "JN051", 
+        'Location': $("#location").val(),
+      },
+        dataType: 'jsonp',
+        format: 'xml',
+        jsonp: 'jsonp',
+        success: function(parsed_json) {
+          alert(parsed_json)
+        }
+    });
+}
+
+
+
+  // $.ajax({
+  //     url: "http://api.careerbuilder.com/v1/jobsearch",
+  //     cache: false,
+  //     data: {
+       
+  //       'DeveloperKey': "WDHL04X6PSQYRX0JT0MS", 
+  //       'Category': "JN051", 
+  //       'Location': $("#location").val(),
+  //     },
+  //     success: function (data, textStatus, jqXHR) {
+  //    alert(data)
+  //     },
+  //     dataType: 'xml',
+  //     crossDomain: true
+  //   });  
+
+
+  
+
+}
+
+</script>
 </html>
