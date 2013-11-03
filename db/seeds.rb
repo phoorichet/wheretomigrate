@@ -44,5 +44,9 @@ def add_races
       )
   end
 end
-
 # add_races()
+
+# For citi model
+require 'wtl/city_us'
+
+###load_city_seed()

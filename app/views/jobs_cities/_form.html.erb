@@ -1,0 +1,41 @@
+<%= form_for(@jobs_city) do |f| %>
+  <% if @jobs_city.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jobs_city.errors.count, "error") %> prohibited this jobs_city from being saved:</h2>
+
+      <ul>
+      <% @jobs_city.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cityName %><br />
+    <%= f.text_field :cityName %>
+  </div>
+  <div class="field">
+    <%= f.label :stateName %><br />
+    <%= f.text_field :stateName %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :population %><br />
+    <%= f.number_field :population %>
+  </div>
+  <div class="field">
+    <%= f.label :numberJobs %><br />
+    <%= f.number_field :numberJobs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
