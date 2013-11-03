@@ -1,0 +1,63 @@
+<h1>Listing races</h1>
+
+<table>
+  <tr>
+    <th>County ID</th>
+    <th>County name</th>
+    <th>Year</th>
+    <th>Indian</th>
+    <th>Bangladeshi</th>
+    <th>Bhutanese</th>
+    <th>Cambodian</th>
+    <th>Chinese</th>
+    <th>Filipino</th>
+    <th>Hmong</th>
+    <th>Indonesian</th>
+    <th>Japanese</th>
+    <th>Korean</th>
+    <th>Laotian</th>
+    <th>Malaysian</th>
+    <th>Nepalese</th>
+    <th>Pakistani</th>
+    <th>Srilankan</th>
+    <th>Taiwanese</th>
+    <th>Thai</th>
+    <th>Vietnamese</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @races.each do |race| %>
+  <tr>
+    <td><%= race.county.id %></td>
+    <td nowrap><%= race.county.name %></td>
+    <td><%= race.year %></td>
+    <td><%= race.indian %></td>
+    <td><%= race.bangladeshi %></td>
+    <td><%= race.bhutanese %></td>
+    <td><%= race.cambodian %></td>
+    <td><%= race.chinese %></td>
+    <td><%= race.filipino %></td>
+    <td><%= race.hmong %></td>
+    <td><%= race.indonesian %></td>
+    <td><%= race.japanese %></td>
+    <td><%= race.korean %></td>
+    <td><%= race.laotian %></td>
+    <td><%= race.malaysian %></td>
+    <td><%= race.nepalese %></td>
+    <td><%= race.pakistani %></td>
+    <td><%= race.srilankan %></td>
+    <td><%= race.taiwanese %></td>
+    <td><%= race.thai %></td>
+    <td><%= race.vietnamese %></td>
+    <td><%= link_to 'Show', race %></td>
+    <td><%= link_to 'Edit', edit_race_path(race) %></td>
+    <td><%= link_to 'Destroy', race, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Race', new_race_path %>

@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  indian: 1
+  bangladeshi: 1
+  bhutanese: 1
+  cambodian: 1
+  chinese: 1
+  filipino: 1
+  hmong: 1
+  indonesian: 1
+  japanese: 1
+  korean: 1
+  laotian: 1
+  malaysian: 1
+  nepalese: 1
+  pakistani: 1
+  srilankan: 1
+  taiwanese: 1
+  thai: 1
+  vietnamese: 1
+
+two:
+  indian: 1
+  bangladeshi: 1
+  bhutanese: 1
+  cambodian: 1
+  chinese: 1
+  filipino: 1
+  hmong: 1
+  indonesian: 1
+  japanese: 1
+  korean: 1
+  laotian: 1
+  malaysian: 1
+  nepalese: 1
+  pakistani: 1
+  srilankan: 1
+  taiwanese: 1
+  thai: 1
+  vietnamese: 1
