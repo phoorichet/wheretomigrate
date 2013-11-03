@@ -49,7 +49,7 @@ gem 'jquery-rails'
 
 
 # Bootstrap 3
-# gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
+# gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
 
 
 # Angular
