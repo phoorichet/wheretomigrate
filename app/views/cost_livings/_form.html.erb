@@ -1,0 +1,57 @@
+<%= form_for(@cost_living) do |f| %>
+  <% if @cost_living.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cost_living.errors.count, "error") %> prohibited this cost_living from being saved:</h2>
+
+      <ul>
+      <% @cost_living.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cityName %><br />
+    <%= f.text_field :cityName %>
+  </div>
+  <div class="field">
+    <%= f.label :lat %><br />
+    <%= f.text_field :lat %>
+  </div>
+  <div class="field">
+    <%= f.label :long %><br />
+    <%= f.text_field :long %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br />
+    <%= f.text_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :compositeIndex %><br />
+    <%= f.text_field :compositeIndex %>
+  </div>
+  <div class="field">
+    <%= f.label :groceryItems %><br />
+    <%= f.text_field :groceryItems %>
+  </div>
+  <div class="field">
+    <%= f.label :housing %><br />
+    <%= f.text_field :housing %>
+  </div>
+  <div class="field">
+    <%= f.label :utilities %><br />
+    <%= f.text_field :utilities %>
+  </div>
+  <div class="field">
+    <%= f.label :transportation %><br />
+    <%= f.text_field :transportation %>
+  </div>
+  <div class="field">
+    <%= f.label :healthcare %><br />
+    <%= f.text_field :healthcare %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
