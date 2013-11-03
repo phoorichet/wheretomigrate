@@ -1,12 +1,10 @@
 Wheretomigrate::Application.routes.draw do
+
+
+  resources :races
   resources :jobs_cities
-
-
   resources :cities
-
-
   resources :counties
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

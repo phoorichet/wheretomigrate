@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20131102230650) do
 
+
   create_table "cities", :force => true do |t|
     t.string   "zip_code"
     t.float    "latitude"
@@ -39,6 +40,32 @@ ActiveRecord::Schema.define(:version => 20131102230650) do
     t.integer  "numberJobs"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "races", :force => true do |t|
+    t.integer  "county_id"
+    t.integer  "year"
+    t.integer  "indian"
+    t.integer  "bangladeshi"
+    t.integer  "bhutanese"
+    t.integer  "burmese"
+    t.integer  "cambodian"
+    t.integer  "chinese"
+    t.integer  "filipino"
+    t.integer  "hmong"
+    t.integer  "indonesian"
+    t.integer  "japanese"
+    t.integer  "korean"
+    t.integer  "laotian"
+    t.integer  "malaysian"
+    t.integer  "nepalese"
+    t.integer  "pakistani"
+    t.integer  "srilankan"
+    t.integer  "taiwanese"
+    t.integer  "thai"
+    t.integer  "vietnamese"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
