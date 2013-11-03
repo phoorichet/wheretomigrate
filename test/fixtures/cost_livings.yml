@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cityName: MyString
+  lat: 1.5
+  long: 1.5
+  size: 1.5
+  compositeIndex: 1.5
+  groceryItems: 1.5
+  housing: 1.5
+  utilities: 1.5
+  transportation: 1.5
+  healthcare: 1.5
+
+two:
+  cityName: MyString
+  lat: 1.5
+  long: 1.5
+  size: 1.5
+  compositeIndex: 1.5
+  groceryItems: 1.5
+  housing: 1.5
+  utilities: 1.5
+  transportation: 1.5
+  healthcare: 1.5

@@ -1,0 +1,2 @@
+module CostLivingsHelper
+end

@@ -1,0 +1,41 @@
+<h1>Listing cost_livings</h1>
+
+<table>
+  <tr>
+    <th>Cityname</th>
+    <th>Lat</th>
+    <th>Long</th>
+    <th>Size</th>
+    <th>Compositeindex</th>
+    <th>Groceryitems</th>
+    <th>Housing</th>
+    <th>Utilities</th>
+    <th>Transportation</th>
+    <th>Healthcare</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cost_livings.each do |cost_living| %>
+  <tr>
+    <td><%= cost_living.cityName %></td>
+    <td><%= cost_living.lat %></td>
+    <td><%= cost_living.long %></td>
+    <td><%= cost_living.size %></td>
+    <td><%= cost_living.compositeIndex %></td>
+    <td><%= cost_living.groceryItems %></td>
+    <td><%= cost_living.housing %></td>
+    <td><%= cost_living.utilities %></td>
+    <td><%= cost_living.transportation %></td>
+    <td><%= cost_living.healthcare %></td>
+    <td><%= link_to 'Show', cost_living %></td>
+    <td><%= link_to 'Edit', edit_cost_living_path(cost_living) %></td>
+    <td><%= link_to 'Destroy', cost_living, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cost living', new_cost_living_path %>
