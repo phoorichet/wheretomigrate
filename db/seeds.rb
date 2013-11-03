@@ -52,4 +52,4 @@ end
 # For citi model
 require 'wtl/city_us'
 
-###load_city_seed()
+load_city_seed()

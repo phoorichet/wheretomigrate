@@ -1,1 +1,26 @@
-<h1> Welcome to WhereToMigrate</h1>
+
+<div id="panel">
+  <form id="mainform">
+    <h1>Migrant Heaven</h1>
+  </form>
+</div>
+<div id="map-canvas"></div>
+
+<script>
+
+function initialize() {
+    var initLatLng = new google.maps.LatLng(39.061849,-97.697296); // USA
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+      zoom: 5,
+      center: initLatLng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    // markPOIs();
+    // initPanel();
+  }
+
+/* Initial Google Maps after the page is loaded */
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
