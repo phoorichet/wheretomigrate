@@ -15,6 +15,8 @@ def init_counties
     County.create(id: row['GEO.id2'], name: row['GEO.display-label'])
   end
 end
+# Uncomment here to add counties
+# init_counties()
 
 def add_races
   csv_text = File.read('res/races-by-county.csv')
@@ -44,6 +46,7 @@ def add_races
       )
   end
 end
+# Uncomment here to add races
 # add_races()
 
 # For citi model
