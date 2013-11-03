@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131102233256) do
+ActiveRecord::Schema.define(:version => 20131103011811) do
 
   create_table "cities", :force => true do |t|
     t.string   "zip_code"
@@ -22,6 +22,21 @@ ActiveRecord::Schema.define(:version => 20131102233256) do
     t.string   "county"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "cost_livings", :force => true do |t|
+    t.string   "html"
+    t.float    "lat"
+    t.float    "long"
+    t.float    "size"
+    t.float    "compositeIndex"
+    t.float    "GroceryItems"
+    t.float    "Housing"
+    t.float    "Utilities"
+    t.float    "Transportation"
+    t.float    "Healthcare"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "counties", :force => true do |t|
