@@ -1,5 +1,5 @@
 Wheretomigrate::Application.routes.draw do
-    resources :jobs_cities
+  resources :jobs_cities
 
 
   resources :cities
@@ -10,6 +10,7 @@ Wheretomigrate::Application.routes.draw do
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  match 'test' => "Home#index"
 
   root :to => "static_pages#main"
 
