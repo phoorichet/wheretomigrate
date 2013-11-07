@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cityname:</b>
+  <%= @jobs_city.cityName %>
+</p>
+
+<p>
+  <b>Statename:</b>
+  <%= @jobs_city.stateName %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @jobs_city.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @jobs_city.longitude %>
+</p>
+
+<p>
+  <b>Population:</b>
+  <%= @jobs_city.population %>
+</p>
+
+<p>
+  <b>Numberjobs:</b>
+  <%= @jobs_city.numberJobs %>
+</p>
+
+
+<%= link_to 'Edit', edit_jobs_city_path(@jobs_city) %> |
+<%= link_to 'Back', jobs_cities_path %>

@@ -1,0 +1,93 @@
+<%= form_for(@race) do |f| %>
+  <% if @race.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@race.errors.count, "error") %> prohibited this race from being saved:</h2>
+
+      <ul>
+      <% @race.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :indian %><br />
+    <%= f.number_field :indian %>
+  </div>
+  <div class="field">
+    <%= f.label :bangladeshi %><br />
+    <%= f.number_field :bangladeshi %>
+  </div>
+  <div class="field">
+    <%= f.label :bhutanese %><br />
+    <%= f.number_field :bhutanese %>
+  </div>
+  <div class="field">
+    <%= f.label :cambodian %><br />
+    <%= f.number_field :cambodian %>
+  </div>
+  <div class="field">
+    <%= f.label :chinese %><br />
+    <%= f.number_field :chinese %>
+  </div>
+  <div class="field">
+    <%= f.label :filipino %><br />
+    <%= f.number_field :filipino %>
+  </div>
+  <div class="field">
+    <%= f.label :hmong %><br />
+    <%= f.number_field :hmong %>
+  </div>
+  <div class="field">
+    <%= f.label :indonesian %><br />
+    <%= f.number_field :indonesian %>
+  </div>
+  <div class="field">
+    <%= f.label :japanese %><br />
+    <%= f.number_field :japanese %>
+  </div>
+  <div class="field">
+    <%= f.label :korean %><br />
+    <%= f.number_field :korean %>
+  </div>
+  <div class="field">
+    <%= f.label :laotian %><br />
+    <%= f.number_field :laotian %>
+  </div>
+  <div class="field">
+    <%= f.label :malaysian %><br />
+    <%= f.number_field :malaysian %>
+  </div>
+  <div class="field">
+    <%= f.label :nepalese %><br />
+    <%= f.number_field :nepalese %>
+  </div>
+  <div class="field">
+    <%= f.label :pakistani %><br />
+    <%= f.number_field :pakistani %>
+  </div>
+  <div class="field">
+    <%= f.label :srilankan %><br />
+    <%= f.number_field :srilankan %>
+  </div>
+  <div class="field">
+    <%= f.label :taiwanese %><br />
+    <%= f.number_field :taiwanese %>
+  </div>
+  <div class="field">
+    <%= f.label :thai %><br />
+    <%= f.number_field :thai %>
+  </div>
+  <div class="field">
+    <%= f.label :vietnamese %><br />
+    <%= f.number_field :vietnamese %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

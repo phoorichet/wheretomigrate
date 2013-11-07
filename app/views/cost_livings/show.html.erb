@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cityname:</b>
+  <%= @cost_living.cityName %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @cost_living.lat %>
+</p>
+
+<p>
+  <b>Long:</b>
+  <%= @cost_living.long %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @cost_living.size %>
+</p>
+
+<p>
+  <b>Compositeindex:</b>
+  <%= @cost_living.compositeIndex %>
+</p>
+
+<p>
+  <b>Groceryitems:</b>
+  <%= @cost_living.groceryItems %>
+</p>
+
+<p>
+  <b>Housing:</b>
+  <%= @cost_living.housing %>
+</p>
+
+<p>
+  <b>Utilities:</b>
+  <%= @cost_living.utilities %>
+</p>
+
+<p>
+  <b>Transportation:</b>
+  <%= @cost_living.transportation %>
+</p>
+
+<p>
+  <b>Healthcare:</b>
+  <%= @cost_living.healthcare %>
+</p>
+
+
+<%= link_to 'Edit', edit_cost_living_path(@cost_living) %> |
+<%= link_to 'Back', cost_livings_path %>

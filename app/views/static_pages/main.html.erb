@@ -1,1 +1,111 @@
-<h1> Welcome to WhereToMigrate</h1>
+
+<div id="panel">
+  <form id="mainform">
+    <h1>Migrant Heaven</h1>
+    <form id="mainForm">
+      View factor:
+      <select name="factorList" onchange="factorOnChange(this)">
+        <option value="jobs_cities">Job openings</option>
+        <option value="crime">Crime rates</option>
+        <option value="cost_livings">Cost of livings</option>
+        <optgroup label="Races">
+          <option value="race_indian">Bangladeshi</option>
+          <option value="race_indian">Bhutanese</option>
+          <option value="race_indian">Burmese</option>
+          <option value="race_indian">Cambodian</option>
+          <option value="race_indian">Chinese</option>
+          <option value="race_indian">Filipino</option>
+          <option value="race_indian">Hmong</option>
+          <option value="race_indian">Indian</option>
+          <option value="race_indian">Indonesian</option>
+          <option value="race_indian">Japanese</option>
+          <option value="race_indian">Korean</option>
+          <option value="race_indian">Laotian</option>
+          <option value="race_indian">Malaysian</option>
+          <option value="race_indian">Nepalese</option>
+          <option value="race_indian">Pakistani</option>
+          <option value="race_indian">Sri Lankan</option>
+          <option value="race_indian">Taiwanese</option>
+          <option value="race_indian">Thai</option>
+          <option value="race_indian">Vietnamese</option>
+        </optgroup>
+      </select>
+    </form>
+  </form>
+</div>
+<div id="map-canvas"></div>
+
+<script>
+
+  var data;
+  var MAX_RADIUS = 100000;
+  var COLOR_STROKE = '#f00';
+  var COLOR_FILL = '#ff0';
+  var clusters = [];
+
+  function initialize() {
+    var initLatLng = new google.maps.LatLng(39.092969,-97.697296); // USA
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+      zoom: 5,
+      center: initLatLng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    getData("jobs_cities");
+  }
+
+  function getData(factor_name) {
+    removeClusters();
+    $.ajax({
+      url: factor_name+".json",
+      cache: false,
+      success: function (data, textStatus, jqXHR) {
+        drawClusters(data);
+      },
+      dataType: 'json',
+    });
+
+  }
+
+  // Clear cluster markers
+  function removeClusters() {
+    for (i=0; i<clusters.length; i++) {
+      clusters[i].setMap(null);
+    }
+    clusters = [];
+  }
+
+  // Draw clusters
+  function drawClusters(data) {
+    for (var i=0; i<data.length; i++) {
+      // Draw device's position
+      clusters[i] = new google.maps.Circle({
+        map: map,
+        strokeColor: COLOR_STROKE,
+        strokeOpacity: 1.0,
+        strokeWeight: 1,
+        fillColor: COLOR_FILL,
+        fillOpacity: 0.2,
+        center: new google.maps.LatLng(data[i].lat, data[i].lng),
+        radius: parseInt(data[i].size*MAX_RADIUS),
+      });
+
+      var infowindow = new google.maps.InfoWindow({
+        position: new google.maps.LatLng(data[i].lat, data[i].lng),
+        content: clusters[i].html
+      });
+
+      google.maps.event.addListener(clusters[i], 'click', function() {
+        infowindow.open(map,clusters[i]);
+      });
+    }
+  }
+
+  /* Initial Google Maps after the page is loaded */
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+  function factorOnChange(f) {
+    getData(f.value);
+  }
+
+</script>

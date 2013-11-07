@@ -1,3 +1,54 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map-canvas, #map_canvas {
+  height: 100%;
+}
+
+@media print {
+  html, body {
+    height: auto;
+  }
+
+  #map-canvas, #map_canvas {
+    height: 650px;
+  }
+}
+
+#panel {
+  position: absolute;
+  top: 5px;
+  left: 85px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 0 5px;
+  border: 1px solid #999;
+}
+#panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#panel li {
+  padding: 2px 8px;
+}
+#panel .covered {
+  background: orange;
+}
+#panel a {
+  text-decoration: none;
+  color: #000;
+}
+#panel li:hover {
+  background: lightgray;
+}
+#panel li:active {
+  background: darkgray;
+}

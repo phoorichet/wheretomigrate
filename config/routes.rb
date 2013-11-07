@@ -1,15 +1,14 @@
 Wheretomigrate::Application.routes.draw do
   resources :crimes
-
-
+  resources :cost_livings
+  resources :races
+  resources :jobs_cities
   resources :cities
-
-
   resources :counties
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  match 'test' => "Home#index"
 
   root :to => "static_pages#main"
 

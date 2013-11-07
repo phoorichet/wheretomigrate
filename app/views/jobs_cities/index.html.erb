@@ -1,0 +1,33 @@
+<h1>Listing jobs_cities</h1>
+
+<table>
+  <tr>
+    <th>Cityname</th>
+    <th>Statename</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Population</th>
+    <th>Numberjobs</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobs_cities.each do |jobs_city| %>
+  <tr>
+    <td><%= jobs_city.cityName %></td>
+    <td><%= jobs_city.stateName %></td>
+    <td><%= jobs_city.latitude %></td>
+    <td><%= jobs_city.longitude %></td>
+    <td><%= jobs_city.population %></td>
+    <td><%= jobs_city.numberJobs %></td>
+    <td><%= link_to 'Show', jobs_city %></td>
+    <td><%= link_to 'Edit', edit_jobs_city_path(jobs_city) %></td>
+    <td><%= link_to 'Destroy', jobs_city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Jobs city', new_jobs_city_path %>

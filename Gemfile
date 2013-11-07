@@ -1,12 +1,18 @@
 source 'https://rubygems.org'
 
+gem 'yaml_db'
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
 
+group :production do
+  gem 'pg'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -40,13 +46,13 @@ gem 'jquery-rails'
 #
 # # D3 Library
 # https://github.com/iblue/d3-rails
-gem 'd3-rails'
+# gem 'd3-rails'
 
 
 # Bootstrap 3
-gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
+# gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
 
 
 # Angular
-gem 'angularjs-rails'
+# gem 'angularjs-rails'
 
