@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131102230650) do
+ActiveRecord::Schema.define(:version => 20131106213202) do
 
   create_table "cities", :force => true do |t|
     t.string   "zip_code"
@@ -19,15 +19,28 @@ ActiveRecord::Schema.define(:version => 20131102230650) do
     t.float    "longitude"
     t.string   "city"
     t.string   "state"
-    t.string   "county"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "county_name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "county_id"
   end
 
   create_table "counties", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "state"
+    t.integer  "state_id"
+    t.integer  "geo_id"
+    t.string   "geometry"
+  end
+
+  create_table "crimes", :force => true do |t|
+    t.integer  "city_id"
+    t.string   "population"
+    t.integer  "total_law_enforcement_employees"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
 end

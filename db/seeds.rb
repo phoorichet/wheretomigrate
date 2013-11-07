@@ -10,15 +10,26 @@ require 'csv'
 
 csv_text = File.read('res/races-by-county.csv')
 csv = CSV.parse(csv_text, :headers => true)
+  
+""" 
 csv.each do |row|
-  County.create(id: row['GEO.id2'], name: row['GEO.display-label'])
-  # County.create!(row.to_hash)
-end
+  data = Hash.new
+  data[:id] = row['GEO.id2']
+  county_name =  row['GEO.display-label'].sub(' County', '')
+  data[:name] = county_name.split(', ')[0]
+  data[:state] = county_name.split(', ')[1]
 
+  data[:state_abbr] = map[data[:state].upcase]
+
+  County.create(data)
+end
+"""
 
 
 # For citi model
 require 'wtl/city_us'
 
-###load_city_seed()
- 
+
+#load_crime()
+#load_us_counties()
+load_us_cities()

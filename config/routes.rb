@@ -1,4 +1,7 @@
 Wheretomigrate::Application.routes.draw do
+  resources :crimes
+
+
   resources :cities
 
 

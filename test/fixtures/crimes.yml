@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  city_id: 1
+  population: MyString
+  total_law_enforcement_employees: 1
+
+two:
+  city_id: 1
+  population: MyString
+  total_law_enforcement_employees: 1
