@@ -46,13 +46,13 @@ gem 'jquery-rails'
 #
 # # D3 Library
 # https://github.com/iblue/d3-rails
-gem 'd3-rails'
+# gem 'd3-rails'
 
 
 # Bootstrap 3
-gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
+# gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
 
 
 # Angular
-gem 'angularjs-rails'
+# gem 'angularjs-rails'
 

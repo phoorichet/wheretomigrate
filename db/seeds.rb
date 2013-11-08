@@ -8,16 +8,6 @@
 
 require 'csv'    
 
-def init_counties
-  csv_text = File.read('res/races-by-county.csv')
-  csv = CSV.parse(csv_text, :headers => true)
-  csv.each do |row|
-    County.create(id: row['GEO.id2'], name: row['GEO.display-label'])
-  end
-end
-# Uncomment here to add counties
-# init_counties()
-
 def add_races
   csv_text = File.read('res/races-by-county.csv')
   csv = CSV.parse(csv_text, :headers => true)
@@ -49,7 +39,10 @@ end
 # Uncomment here to add races
 # add_races()
 
+
+
 # For citi model
 require 'wtl/city_us'
-
-load_city_seed()
+#load_crime()
+load_us_counties()
+load_us_cities()

@@ -2,7 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1c2093b-c289-4594-b82c-c7de14ab8376" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131102235159_add_state_to_county.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131103000241_changed_county_to_county_name_in_city.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131103000503_add_county_to_city.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131103003255_add_state_abbr_to_county.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131103012442_create_crimes.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131103185927_create_cost_livings.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131106213202_fixed_column_on_counties.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/Workbook3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/cost_livings/_form.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/crimes/_form.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/cost_living.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/cost_living_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/cost_livings.css.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/cost_livings.js.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dump/cost_livings.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/cost_livings.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/cost_livings_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/functional/cost_livings_controller_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/cost_livings_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/helpers/cost_livings_helper_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/crime.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/crime_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/crimes.css.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/crimes.js.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/crimes.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/crimes_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/functional/crimes_controller_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/crimes_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/helpers/crimes_helper_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/data.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/cost_livings/edit.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/crimes/edit.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/importCostLiving.rake" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/cost_livings/index.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/crimes/index.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/living.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/cost_livings/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/crimes/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dump/races.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/cost_livings/show.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/crimes/show.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/us_counties.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/tasks/import.rake" afterPath="$PROJECT_DIR$/lib/tasks/importJobOpennings.rake" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/script/zip_codes_states.csv" afterPath="$PROJECT_DIR$/res/zip_codes_states.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dump/cities.yml" afterPath="$PROJECT_DIR$/db/dump/cities.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/city.rb" afterPath="$PROJECT_DIR$/app/models/city.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/wtl/city_us.rb" afterPath="$PROJECT_DIR$/lib/wtl/city_us.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dump/counties.yml" afterPath="$PROJECT_DIR$/db/dump/counties.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/county.rb" afterPath="$PROJECT_DIR$/app/models/county.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dump/jobs_cities.yml" afterPath="$PROJECT_DIR$/db/dump/jobs_cities.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/jobs_city.rb" afterPath="$PROJECT_DIR$/app/models/jobs_city.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/main.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/main.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/race.rb" afterPath="$PROJECT_DIR$/app/models/race.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
     </list>
     <ignored path="wheretomigrate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,16 +98,10 @@
         <entry file="file://$PROJECT_DIR$/app/views/static_pages/main.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="import.rake" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/tasks/import.rake">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="15" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0">
-              <folding />
+              <folding>
+                <marker date="1383953208000" expanded="true" signature="1689:3253" placeholder="{...}" />
+                <marker date="1383953208000" expanded="true" signature="1836:1884" placeholder="{&quot;zoom&quot;: 5...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,7 +109,7 @@
       <file leaf-file-name="schema.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="33" selection-start="1990" selection-end="1990" vertical-scroll-proportion="0.69491524">
+            <state line="15" column="0" selection-start="795" selection-end="795" vertical-scroll-proportion="0.2542373">
               <folding />
             </state>
           </provider>
@@ -81,6 +134,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/lib/tasks/import.rake" />
+        <option value="$PROJECT_DIR$/db/schema.rb" />
       </list>
     </option>
   </component>
@@ -559,7 +613,10 @@
     <entry file="file://$PROJECT_DIR$/app/views/static_pages/main.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1383953208000" expanded="true" signature="1689:3253" placeholder="{...}" />
+            <marker date="1383953208000" expanded="true" signature="1836:1884" placeholder="{&quot;zoom&quot;: 5...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -573,20 +630,16 @@
     <entry file="file://$PROJECT_DIR$/app/views/static_pages/main.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/import.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="15" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1383953208000" expanded="true" signature="1689:3253" placeholder="{...}" />
+            <marker date="1383953208000" expanded="true" signature="1836:1884" placeholder="{&quot;zoom&quot;: 5...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="33" selection-start="1990" selection-end="1990" vertical-scroll-proportion="0.69491524">
+        <state line="15" column="0" selection-start="795" selection-end="795" vertical-scroll-proportion="0.2542373">
           <folding />
         </state>
       </provider>
