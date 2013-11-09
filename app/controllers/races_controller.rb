@@ -2,7 +2,13 @@ class RacesController < ApplicationController
   # GET /races
   # GET /races.json
   def index
-    @races = Race.all
+    @races = Race.all.take(100).map do |c|  
+      unless c.county.cities.first().nil?
+        {:size => c.name(params[:name]), :lat => c.county.cities.first().latitude, :lng => c.county.cities.first().longitude} 
+      end
+    end
+    #@races = Race.where(["id = ?", 1]).select("county_id,bangladeshi")
+    #@races.name()
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,8 +20,8 @@ class RacesController < ApplicationController
   # GET /races/1.json
   def show
     @race = Race.find(params[:id]) 
-    @race.name(params[:name])
 
+    @race.name(params[:name])
 
     respond_to do |format|
       format.html # show.html.erb
