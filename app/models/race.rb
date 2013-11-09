@@ -16,8 +16,10 @@ class Race < ActiveRecord::Base
 
   def as_json options={}
     {
-      :lat => self.county.cities.first().latitude, 
-      :lng => self.first().county.cities.first().longitude,
+      #:lat => self.county.cities.first().latitude, 
+      #:lng => self.county.cities.first().longitude,
+      :lat => lat,
+      :lng => lng,
       :size => @number,
      # :html => 
     }
