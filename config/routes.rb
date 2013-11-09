@@ -8,6 +8,30 @@ Wheretomigrate::Application.routes.draw do
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
+
+
+  match 'race_bangladeshi' => "Races#race_bangladeshi"
+  match 'race_bhutanese' => "Races#race_bhutanese"
+  match 'race_burmese' => "Races#race_burmese"
+  match 'race_cambodian' => "Races#race_cambodian"
+  match 'race_chinese' => "Races#race_chinese"
+  match 'race_filipino' => "Races#race_filipino"
+  match 'race_hmong' => "Races#race_hmong"
+  match 'race_indian' => "Races#race_indian"
+  match 'race_indonesian' => "Races#race_indonesian"
+  match 'race_japanese' => "Races#race_japanese"
+  match 'race_korean' => "Races#race_korean"
+  match 'race_laotian' => "Races#race_laotian"
+  match 'race_malaysian' => "Races#race_malaysian"
+
+  match 'race_nepalese' => "Races#race_nepalese"
+  match 'race_pakistani' => "Races#race_pakistani"
+  match 'race_srilankan' => "Races#race_srilankan"
+  match 'race_taiwanese' => "Races#race_taiwanese"
+  match 'race_thai' => "Races#race_thai"
+  match 'race_vietnamese' => "Races#race_vietnamese"
+  
+
   match 'test' => "Home#index"
 
   root :to => "static_pages#main"

@@ -1,14 +1,135 @@
 class RacesController < ApplicationController
+
+  def race_bangladeshi
+    race("bangladeshi")
+
+  end
+
+
+  def race_bhutanese
+    race("bhutanese")
+
+  end
+
+  def race_burmese
+    race("burmese")
+
+  end
+
+  def race_cambodian
+    race("cambodian")
+
+  end
+
+  def race_chinese
+    race("chinese")
+
+  end
+
+  def race_filipino
+    race("filipino")
+
+  end
+
+  def race_hmong
+    race("hmong")
+
+  end
+
+  def race_indian
+    race("indian")
+
+  end
+
+  def race_indonesian
+    race("indonesian")
+
+  end
+  def race_japanese
+    race("japanese")
+
+  end
+  def race_korean
+    race("korean")
+
+  end
+  def race_laotian
+    race("laotian")
+
+  end
+
+  def race_malaysian
+    race("malaysian")
+
+  end
+  def race_nepalese
+    race("nepalese")
+
+  end
+  def race_pakistani
+    race("pakistani")
+
+  end
+ def race_srilankan
+    race("srilankan")
+
+  end
+ def race_taiwanese
+    race("taiwanese")
+
+  end
+ def race_thai
+    race("thai")
+
+  end
+
+
+ def race_vietnamese
+    race("vietnamese")
+
+  end
+
+
+
+  
+
   # GET /races
   # GET /races.json
-  def index
-    @races = Race.all.take(100).map do |c|  
-      unless c.county.cities.first().nil?
-        {:size => c.name(params[:name]), :lat => c.county.cities.first().latitude, :lng => c.county.cities.first().longitude} 
+  def race(name)
+    @races=[]
+    Race.all.map do |c|  
+      if !c.county.nil? && !c.county.cities.nil? && !c.county.cities.first().nil?
+        
+
+        @races.push({:size => c.name(name), :lat => c.county.cities.first().latitude, :lng => c.county.cities.first().longitude} )
       end
     end
     #@races = Race.where(["id = ?", 1]).select("county_id,bangladeshi")
     #@races.name()
+
+  
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @races }
+    end
+  end
+
+  # GET /races
+  # GET /races.json
+  def index
+    @races=[]
+    Race.all.map do |c|  
+      if !c.county.nil? && !c.county.cities.nil? && !c.county.cities.first().nil?
+        
+
+        @races.push({:size => c.name(params[:name]), :lat => c.county.cities.first().latitude, :lng => c.county.cities.first().longitude} )
+      end
+    end
+    #@races = Race.where(["id = ?", 1]).select("county_id,bangladeshi")
+    #@races.name()
+
+  
 
     respond_to do |format|
       format.html # index.html.erb
