@@ -53,8 +53,10 @@
       return result;
   }
 
+  var map;
   var data;
-  var RADIUS = 5000;
+  var RADIUS = 11000;
+  var RADIUS_RATIO = 4.0;
   var clusters = [];
 
   function initialize() {
@@ -65,12 +67,20 @@
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
+    google.maps.event.addListener(map, 'zoom_changed', function() {
+      resizeClusters(map.getZoom());
+    });
+
     getData("jobs_cities");
   }
 
+  /* Get data from selected factor */
   function getData(factor_name) {
+
+    // Show loading indicator
     $('#loading').fadeIn();
 
+    // Change legend gradient
     if (factor_name === 'crime' || factor_name === 'cost_livings') {
       $('#legend_gradient').removeClass('redToGreen');
       $('#legend_gradient').addClass('greenToRed');
@@ -79,6 +89,8 @@
       $('#legend_gradient').addClass('redToGreen');
     }
 
+    // Remove previous clusters. Show a loading indicator.
+    // Hide the indicator and draw clusters when data arrives.
     removeClusters();
     $.ajax({
       url: factor_name+".json",
@@ -95,6 +107,18 @@
 
   }
 
+  // Resize clusters when the map is zoomed
+  function resizeClusters(zoom_level) {
+    // var r = RADIUS*(RADIUS_RATIO/Math.pow(zoom_level,1.1));
+    // var r = RADIUS*(RADIUS_RATIO*zoom_level);
+    r = zoom_level;
+    console.log(r);
+    for (i=0; i<clusters.length; i++) {
+      clusters[i].setRadius(r);
+    }
+    // alert(zoom_level);
+  }
+
   // Clear cluster markers
   function removeClusters() {
     for (i=0; i<clusters.length; i++) {
@@ -109,9 +133,9 @@
       // Draw device's position
       clusters[i] = new google.maps.Circle({
         map: map,
-        strokeColor: '#000',
+        // strokeColor: '#000',
         // strokeOpacity: 1.0,
-        strokeWeight: 1,
+        strokeWeight: 0,
         // fillColor: COLOR_FILL,
         fillColor: toRGColor(data[i].size),
         fillOpacity: 1,
@@ -120,11 +144,11 @@
         radius: RADIUS,
       });
 
+      // Info window
       var infowindow = new google.maps.InfoWindow({
         position: new google.maps.LatLng(data[i].lat, data[i].lng),
         content: clusters[i].html
       });
-
       google.maps.event.addListener(clusters[i], 'click', function() {
         infowindow.open(map,clusters[i]);
       });
