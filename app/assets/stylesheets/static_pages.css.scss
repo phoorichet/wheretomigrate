@@ -52,3 +52,44 @@ html, body {
 #panel li:active {
   background: darkgray;
 }
+#panel div {
+  display: inline-block;
+}
+
+#legend_gradient {
+  width: 100px;
+  height: 10px;
+}
+
+.redToGreen {
+  background: #ff0000;
+  background: -moz-linear-gradient(left,  #ff0000 0%, #ffff00 50%, #00ff00 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ff0000), color-stop(50%,#ffff00), color-stop(100%,#00ff00));
+  background: -webkit-linear-gradient(left,  #ff0000 0%,#ffff00 50%,#00ff00 100%);
+  background: -o-linear-gradient(left,  #ff0000 0%,#ffff00 50%,#00ff00 100%);
+  background: -ms-linear-gradient(left,  #ff0000 0%,#ffff00 50%,#00ff00 100%);
+  background: linear-gradient(to right,  #ff0000 0%,#ffff00 50%,#00ff00 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#00ff00',GradientType=1 );
+}
+
+.greenToRed {
+  background: #00ff00;
+  background: -moz-linear-gradient(left,  #00ff00 0%, #ffff00 50%, #ff0000 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#00ff00), color-stop(50%,#ffff00), color-stop(100%,#ff0000));
+  background: -webkit-linear-gradient(left,  #00ff00 0%,#ffff00 50%,#ff0000 100%);
+  background: -o-linear-gradient(left,  #00ff00 0%,#ffff00 50%,#ff0000 100%);
+  background: -ms-linear-gradient(left,  #00ff00 0%,#ffff00 50%,#ff0000 100%);
+  background: linear-gradient(to right,  #00ff00 0%,#ffff00 50%,#ff0000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ff00', endColorstr='#ff0000',GradientType=1 );
+}
+
+#loading {
+  position: absolute;
+  width: 180px;
+  left: 50%;
+  margin-left: -90px;
+  height: 180px;
+  top: 50%;
+  margin-top: -90px;
+  display:none;
+}
