@@ -13,7 +13,9 @@ class RacesController < ApplicationController
   # GET /races/1
   # GET /races/1.json
   def show
-    @race = Race.find(params[:id])
+    @race = Race.find(params[:id]) 
+    @race.name(params[:name])
+
 
     respond_to do |format|
       format.html # show.html.erb
