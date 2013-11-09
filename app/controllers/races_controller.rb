@@ -98,10 +98,14 @@ class RacesController < ApplicationController
   def race(name)
     @races=[]
     Race.all.map do |c|  
-      if !c.county.nil? && !c.county.cities.nil? && !c.county.cities.first().nil?
-        
+      if !c.lat.nil? && !c.lng.nil?
 
-        @races.push({:size => c.name(name), :lat => c.county.cities.first().latitude, :lng => c.county.cities.first().longitude} )
+     # if !c.county.nil? && !c.county.cities.nil? && !c.county.cities.first().nil?
+                #@races.push({:size => c.name(name), :lat => c.county.cities.first().latitude, :lng => c.county.cities.first().longitude} )
+
+        @races.push({:size => c.name(name), :lat => c.lat, :lng => c.lng} )
+
+        #@races.push({:size => c.name(name), :lat => c.county.name, :lng => c.county.name} )
       end
     end
     #@races = Race.where(["id = ?", 1]).select("county_id,bangladeshi")
@@ -118,18 +122,11 @@ class RacesController < ApplicationController
   # GET /races
   # GET /races.json
   def index
-    @races=[]
-    Race.all.map do |c|  
-      if !c.county.nil? && !c.county.cities.nil? && !c.county.cities.first().nil?
-        
-
-        @races.push({:size => c.name(params[:name]), :lat => c.county.cities.first().latitude, :lng => c.county.cities.first().longitude} )
-      end
-    end
+   @races=Race.all
     #@races = Race.where(["id = ?", 1]).select("county_id,bangladeshi")
     #@races.name()
 
-  
+
 
     respond_to do |format|
       format.html # index.html.erb
