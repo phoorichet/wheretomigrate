@@ -49,7 +49,7 @@ end
 #
 # # D3 Library
 # https://github.com/iblue/d3-rails
-# gem 'd3-rails'
+gem 'd3-rails'
 
 
 # Bootstrap 3

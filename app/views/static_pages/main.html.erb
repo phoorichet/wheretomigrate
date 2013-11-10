@@ -1,5 +1,8 @@
 <div class="panel panel-primary" id="panel-main">
-  <div class="panel-heading">Migrant Heaven</div>
+  <div class="panel-heading">
+    Migrant Heaven
+   <span id="toggle-panel-body" class="glyphicon glyphicon-chevron-up pull-right"></span>
+  </div>
   <div class="panel-body">
     <div class="row row-padding">
       What do you want to consider?
@@ -46,6 +49,11 @@
         <input type="text" class="form-control" title="Search for a city/county" placeholder="Enter a city or county">
         <span class="input-group-btn"><button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button></span>
       </div>
+    </div>  
+    <div class="row row-padding">
+      <!-- Radar chart -->
+      <div id="radar-body"></div>
+      <div id="radar-chart"></div>
     </div>  
   </div><!-- end div.panel-body -->
 </div><!-- end panel panel-primary -->
