@@ -56,7 +56,6 @@ function toRGColor(input) {
 var map;
 var LATLNG_USA = new google.maps.LatLng(39.092969,-97.697296);
 var MY_MAPTYPE_ID = 'custom_style';
-var RADIUS = 11000;
 var RADIUS_RATIO = 4.0;
 var clusters = [];
 
@@ -128,7 +127,7 @@ function initialize() {
     $('#loading').fadeIn();
 
     // Change legend gradient
-    if (factor_name === 'crime' || factor_name === 'cost_livings') {
+    if (factor_name === 'crimes' || factor_name === 'cost_livings') {
       $('#legend_gradient').removeClass('redToGreen');
       $('#legend_gradient').addClass('greenToRed');
     } else {
