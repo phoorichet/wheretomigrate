@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1c2093b-c289-4594-b82c-c7de14ab8376" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/wheretomigrate.iml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/importJobOpennings.rake" afterPath="$PROJECT_DIR$/lib/tasks/importJobOpennings.rake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/main.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/main.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wheretomigrate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -14,7 +31,7 @@
     <file path="/transit_score.rb" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384044148976" ignored="false" />
     <file path="/application_helper.rb" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1383958753875" ignored="false" />
     <file path="/Gemfile" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384023359611" ignored="false" />
-    <file path="/importJobOpennings.rake" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384063240631" ignored="false" />
+    <file path="/importJobOpennings.rake" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384064147905" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +51,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="importJobOpennings.rake" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/tasks/importJobOpennings.rake">
+      <file leaf-file-name="importJobOpenings.rake" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/tasks/importJobOpenings.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="40" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0">
+            <state line="6" column="6" selection-start="100" selection-end="117" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jobs_cities.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/dump/jobs_cities.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.8163266">
               <folding />
             </state>
           </provider>
@@ -46,7 +72,7 @@
       <file leaf-file-name="importTransitScore.rake" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/tasks/importTransitScore.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="29" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0">
+            <state line="10" column="24" selection-start="272" selection-end="290" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -64,11 +90,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="62" selection-start="163" selection-end="163" vertical-scroll-proportion="0.11873351">
-              <folding />
+            <state line="5" column="62" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1384065183000" expanded="true" signature="165:251" placeholder="#..." />
+                <marker date="1384065183000" expanded="true" signature="340:425" placeholder="#..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,7 +123,7 @@
       <file leaf-file-name="jobs_city.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/jobs_city.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="19" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
+            <state line="11" column="3" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -129,8 +158,8 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/Gemfile.lock" />
-        <option value="$PROJECT_DIR$/lib/tasks/importJobOpennings.rake" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/lib/tasks/importJobOpennings.rake" />
       </list>
     </option>
   </component>
@@ -434,6 +463,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/tasks" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/db/dump" />
+    </key>
   </component>
   <component name="RunManager" selected="Rails.Development: wheretomigrate">
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
@@ -682,14 +714,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1676" height="1028" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1557465" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2564417" sideWeight="0.8442535" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2564417" sideWeight="0.8442535" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -765,13 +797,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="22" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.9939759">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/importCostLiving.rake">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -840,7 +865,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/jobs_city.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="19" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
+        <state line="11" column="3" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -855,23 +880,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/importTransitScore.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="29" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/importJobOpennings.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="40" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="62" selection-start="163" selection-end="163" vertical-scroll-proportion="0.11873351">
+        <state line="5" column="62" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1384065183000" expanded="true" signature="165:251" placeholder="#..." />
+            <marker date="1384065183000" expanded="true" signature="340:425" placeholder="#..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/importTransitScore.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="24" selection-start="272" selection-end="290" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/importJobOpenings.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="6" selection-start="100" selection-end="117" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dump/jobs_cities.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.8163266">
           <folding />
         </state>
       </provider>
