@@ -12,6 +12,9 @@ task :importJobOpenings => [:environment] do
 
 #|| count>0
   	unless row[4].nil?
+			count += 1
+			# if the data is already read, skip reading city information
+			#if JobsCity.find_by_id(count) == row[1]
 
 			coordinates=row[4].split(',')
 			coordinates[1]="-"+coordinates[1]
