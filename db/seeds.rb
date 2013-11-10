@@ -42,7 +42,9 @@ end
 
 
 # For citi model
-require 'wtl/city_us'
+require 'wtl/load_seed'
 #load_crime()
-load_us_counties()
-load_us_cities()
+#load_us_counties()
+#load_us_cities()
+#calculate_crime_size()
+#normalize_crime_size()

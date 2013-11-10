@@ -1,70 +1,166 @@
 
 <div id="panel">
-  <form id="mainform">
-    <h1>Migrant Heaven</h1>
-    <form id="mainForm">
-      View factor:
-      <select name="factorList" onchange="factorOnChange(this)">
-        <option value="jobs_cities">Job openings</option>
-        <option value="crime">Crime rates</option>
-        <option value="cost_livings">Cost of livings</option>
-        <optgroup label="Races">
-          <option value="race_indian">Bangladeshi</option>
-          <option value="race_indian">Bhutanese</option>
-          <option value="race_indian">Burmese</option>
-          <option value="race_indian">Cambodian</option>
-          <option value="race_indian">Chinese</option>
-          <option value="race_indian">Filipino</option>
-          <option value="race_indian">Hmong</option>
-          <option value="race_indian">Indian</option>
-          <option value="race_indian">Indonesian</option>
-          <option value="race_indian">Japanese</option>
-          <option value="race_indian">Korean</option>
-          <option value="race_indian">Laotian</option>
-          <option value="race_indian">Malaysian</option>
-          <option value="race_indian">Nepalese</option>
-          <option value="race_indian">Pakistani</option>
-          <option value="race_indian">Sri Lankan</option>
-          <option value="race_indian">Taiwanese</option>
-          <option value="race_indian">Thai</option>
-          <option value="race_indian">Vietnamese</option>
-        </optgroup>
-      </select>
-    </form>
+  <h1>Migrant Heaven</h1>
+  <form id="mainForm">
+    View factor:
+    <select name="factorList" onchange="factorOnChange(this)">
+      <option value="jobs_cities">Job openings</option>
+      <option value="crimes">Crime rates</option>
+      <option value="cost_livings">Cost of livings</option>
+      <optgroup label="Races">
+        <option value="race_bangladeshi">Bangladeshi</option>
+        <option value="race_bhutanese">Bhutanese</option>
+        <option value="race_burmese">Burmese</option>
+        <option value="race_cambodian">Cambodian</option>
+        <option value="race_chinese">Chinese</option>
+        <option value="race_filipino">Filipino</option>
+        <option value="race_hmong">Hmong</option>
+        <option value="race_indian">Indian</option>
+        <option value="race_indonesian">Indonesian</option>
+        <option value="race_japanese">Japanese</option>
+        <option value="race_korean">Korean</option>
+        <option value="race_laotian">Laotian</option>
+        <option value="race_malaysian">Malaysian</option>
+        <option value="race_nepalese">Nepalese</option>
+        <option value="race_pakistani">Pakistani</option>
+        <option value="race_srilankan">Sri Lankan</option>
+        <option value="race_taiwanese">Taiwanese</option>
+        <option value="race_thai">Thai</option>
+        <option value="race_vietnamese">Vietnamese</option>
+      </optgroup>
+    </select>
+    <div>
+      Low
+      <div id="legend_gradient"></div>
+      High
+    </div>
   </form>
 </div>
 <div id="map-canvas"></div>
+<div id="loading"><%= image_tag 'mf_progress_radar.gif', :alt => 'loading' %></div>
 
 <script>
 
-  var data;
-  var MAX_RADIUS = 100000;
-  var COLOR_STROKE = '#f00';
-  var COLOR_FILL = '#ff0';
-  var clusters = [];
+function toHex(input) {
+  var result = input.toString(16);
+  return (result.length < 2)?('0'+result):result;
+}
 
-  function initialize() {
-    var initLatLng = new google.maps.LatLng(39.092969,-97.697296); // USA
-    map = new google.maps.Map(document.getElementById('map-canvas'), {
-      zoom: 5,
-      center: initLatLng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
+function toRGColor(input) {
+  var r = (input<0.5)?255:Math.ceil(255*(1-input)/0.5);
+  var g = (input<0.5)?Math.ceil(255*input/0.5):255;
+  var result = '#'+toHex(r)+toHex(g)+'00';
+  return result;
+}
 
+var map;
+var LATLNG_USA = new google.maps.LatLng(39.092969,-97.697296);
+var MY_MAPTYPE_ID = 'custom_style';
+var RADIUS = 11000;
+var RADIUS_RATIO = 4.0;
+var clusters = [];
+
+function initialize() {
+  var featureOpts = [
+  // {
+  //   stylers: [
+  //   { hue: '#111111' },
+  //   { visibility: 'simplified' },
+  //   { gamma: 0.5 },
+  //   { weight: 0.5 }
+  //   ]
+  // },
+  {
+    elementType: 'labels',
+    stylers: [
+    { visibility: 'on' }
+    ]
+  },
+  {
+    featureType: 'landscape',
+    stylers: [
+    { color: '#333333' }
+    ]
+  },
+  {
+    featureType: 'landscape.natural.landcover',
+    stylers: [
+    { color: '#333333' }
+    ]
+  },
+  ];
+
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    zoom: 5,
+    center: LATLNG_USA,
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+    },
+    mapTypeId: MY_MAPTYPE_ID
+  });
+
+  var styledMapOptions = {
+    name: 'Custom Style'
+  };
+
+  var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+
+  map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+
+  // Map zoom event
+  google.maps.event.addListener(map, 'zoom_changed', function() {
+    resizeClusters(map.getZoom());
+  });
+
+    // Load first factor to view
     getData("jobs_cities");
   }
 
+  /* Get data from selected factor */
   function getData(factor_name) {
+
+    // Show loading indicator
+    $('#loading').fadeIn();
+
+    // Change legend gradient
+    if (factor_name === 'crime' || factor_name === 'cost_livings') {
+      $('#legend_gradient').removeClass('redToGreen');
+      $('#legend_gradient').addClass('greenToRed');
+    } else {
+      $('#legend_gradient').removeClass('greenToRed');
+      $('#legend_gradient').addClass('redToGreen');
+    }
+
+    // Remove previous clusters. Show a loading indicator.
+    // Hide the indicator and draw clusters when data arrives.
     removeClusters();
     $.ajax({
       url: factor_name+".json",
       cache: false,
       success: function (data, textStatus, jqXHR) {
         drawClusters(data);
+        $('#loading').fadeOut();
+      },
+      error: function (data, textStatus, jqXHR) {
+        $('#loading').fadeOut();
       },
       dataType: 'json',
     });
 
+  }
+
+  // Resize clusters when the map is zoomed
+  // <=3: 35000, 4: 25000, 5: 15000, 6: 11000, 7: 6000, 8: 4000, >=9: 3000
+  var zoomToRadius = [35000,35000,35000,35000,25000,15000,11000,6000,4000,3000];
+  function resizeClusters(zoom_level) {
+    var r;
+    if (zoom_level > 9)
+      r = zoomToRadius[zoomToRadius.length-1];
+    else
+      r = zoomToRadius[zoom_level];
+    for (i=0; i<clusters.length; i++) {
+      clusters[i].setRadius(r);
+    }
   }
 
   // Clear cluster markers
@@ -77,24 +173,25 @@
 
   // Draw clusters
   function drawClusters(data) {
+
     for (var i=0; i<data.length; i++) {
       // Draw device's position
       clusters[i] = new google.maps.Circle({
         map: map,
-        strokeColor: COLOR_STROKE,
+        strokeColor: toRGColor(data[i].size),
         strokeOpacity: 1.0,
         strokeWeight: 1,
-        fillColor: COLOR_FILL,
-        fillOpacity: 0.2,
+        fillColor: toRGColor(data[i].size),
+        fillOpacity: 0.5,
         center: new google.maps.LatLng(data[i].lat, data[i].lng),
-        radius: parseInt(data[i].size*MAX_RADIUS),
+        radius: RADIUS,
       });
 
+      // Info window
       var infowindow = new google.maps.InfoWindow({
         position: new google.maps.LatLng(data[i].lat, data[i].lng),
         content: clusters[i].html
       });
-
       google.maps.event.addListener(clusters[i], 'click', function() {
         infowindow.open(map,clusters[i]);
       });
@@ -108,4 +205,4 @@
     getData(f.value);
   }
 
-</script>
+  </script>

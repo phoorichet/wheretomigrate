@@ -2,6 +2,7 @@ class CostLivingsController < ApplicationController
   # GET /cost_livings
   # GET /cost_livings.json
   def index
+    #@cost_livings = CostLiving.all
     @cost_livings = CostLiving.all
 
     respond_to do |format|

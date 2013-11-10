@@ -1,7 +1,7 @@
 require 'csv'
 
 desc "Import teams from csv file"
-task :import => [:environment] do
+task :importCostLiving => [:environment] do
 
   file = "db/living.csv"
   CSV.foreach(file, :headers => true) do |row|
