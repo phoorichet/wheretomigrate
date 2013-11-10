@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(:version => 20131109235037) do
     t.integer  "vietnamese"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.float    "lat"
+    t.float    "lng"
   end
 
 end
