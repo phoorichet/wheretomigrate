@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131110005055) do
+ActiveRecord::Schema.define(:version => 20131110071531) do
 
   create_table "cities", :force => true do |t|
     t.string   "zip_code"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(:version => 20131110005055) do
     t.datetime "updated_at",  :null => false
     t.integer  "county_id"
   end
+
+  add_index "cities", ["city"], :name => "index_cities_on_city"
+  add_index "cities", ["county_name"], :name => "index_cities_on_county_name"
 
   create_table "cost_livings", :force => true do |t|
     t.string   "cityName"
@@ -39,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20131110005055) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  add_index "cost_livings", ["cityName"], :name => "index_cost_livings_on_cityName"
 
   create_table "counties", :force => true do |t|
     t.string   "name"
@@ -72,6 +77,8 @@ ActiveRecord::Schema.define(:version => 20131110005055) do
     t.integer  "total"
   end
 
+  add_index "crimes", ["county_id"], :name => "index_crimes_on_county_id"
+
   create_table "jobs_cities", :force => true do |t|
     t.string   "cityName"
     t.string   "stateName"
@@ -82,6 +89,8 @@ ActiveRecord::Schema.define(:version => 20131110005055) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "jobs_cities", ["cityName"], :name => "index_jobs_cities_on_cityName"
 
   create_table "races", :force => true do |t|
     t.integer  "county_id"
@@ -111,6 +120,8 @@ ActiveRecord::Schema.define(:version => 20131110005055) do
     t.float    "lng"
   end
 
+  add_index "races", ["county_id"], :name => "index_races_on_county_id"
+
   create_table "transit_scores", :force => true do |t|
     t.string   "cityName"
     t.string   "stateName"
@@ -120,5 +131,7 @@ ActiveRecord::Schema.define(:version => 20131110005055) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
+
+  add_index "transit_scores", ["cityName"], :name => "index_transit_scores_on_cityName"
 
 end
