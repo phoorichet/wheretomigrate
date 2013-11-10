@@ -111,4 +111,14 @@ ActiveRecord::Schema.define(:version => 20131110005055) do
     t.float    "lng"
   end
 
+  create_table "transit_scores", :force => true do |t|
+    t.string   "cityName"
+    t.string   "stateName"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "transit_score"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
 end

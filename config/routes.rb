@@ -1,4 +1,7 @@
 Wheretomigrate::Application.routes.draw do
+  resources :transit_scores
+
+
   resources :crimes
   resources :cost_livings
   resources :races
@@ -33,6 +36,7 @@ Wheretomigrate::Application.routes.draw do
   
 
   match 'test' => "Home#index"
+  match 'city' => "static_pages#city"
 
   root :to => "static_pages#main"
 
