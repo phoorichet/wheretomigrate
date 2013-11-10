@@ -4,6 +4,7 @@ gem 'yaml_db'
 gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'httparty'
+gem 'multi_xml', :git => 'https://github.com/sferik/multi_xml'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

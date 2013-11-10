@@ -2,33 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1c2093b-c289-4594-b82c-c7de14ab8376" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/mf_progress_radar.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131109213202_add_lat_and_lng_to_race.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131109235037_change_crime_model.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131110003831_add_size_to_crime.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131110005055_add_total_to_crime.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/addLatLng.rake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/crime_by_county.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dump/crimes.yml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/.citiesList.csv.swp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/wtl/county_us.rb" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/wtl/city_us.rb" afterPath="$PROJECT_DIR$/lib/wtl/load_seed.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dump/cities.yml" afterPath="$PROJECT_DIR$/db/dump/cities.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/cost_livings_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/cost_livings_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dump/counties.yml" afterPath="$PROJECT_DIR$/db/dump/counties.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/crime.rb" afterPath="$PROJECT_DIR$/app/models/crime.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/importCostLiving.rake" afterPath="$PROJECT_DIR$/lib/tasks/importCostLiving.rake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/main.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/main.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/race.rb" afterPath="$PROJECT_DIR$/app/models/race.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/races_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/races_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/importJobOpennings.rake" afterPath="$PROJECT_DIR$/lib/tasks/importJobOpennings.rake" />
     </list>
     <ignored path="wheretomigrate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +14,7 @@
     <file path="/transit_score.rb" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384044148976" ignored="false" />
     <file path="/application_helper.rb" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1383958753875" ignored="false" />
     <file path="/Gemfile" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384023359611" ignored="false" />
-    <file path="/importJobOpennings.rake" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384060321587" ignored="false" />
+    <file path="/importJobOpennings.rake" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384063240631" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,16 +37,7 @@
       <file leaf-file-name="importJobOpennings.rake" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/tasks/importJobOpennings.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="30" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile.lock" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Gemfile.lock">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="22" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.81632656">
+            <state line="24" column="40" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -80,7 +46,7 @@
       <file leaf-file-name="importTransitScore.rake" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/tasks/importTransitScore.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="3" selection-start="1996" selection-end="1996" vertical-scroll-proportion="0.0">
+            <state line="52" column="29" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -98,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="14" selection-start="99" selection-end="100" vertical-scroll-proportion="0.0">
+            <state line="6" column="62" selection-start="163" selection-end="163" vertical-scroll-proportion="0.11873351">
               <folding />
             </state>
           </provider>
@@ -157,14 +123,14 @@
         <option value="$PROJECT_DIR$/lib/tasks/importCostLiving.rake" />
         <option value="$PROJECT_DIR$/db/migrate/20131109001219_create_transit_scores.rb" />
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/models/jobs_city.rb" />
         <option value="$PROJECT_DIR$/app/models/transit_score.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/importTransitScore.rake" />
-        <option value="$PROJECT_DIR$/lib/tasks/importJobOpennings.rake" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/Gemfile.lock" />
+        <option value="$PROJECT_DIR$/lib/tasks/importJobOpennings.rake" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -813,13 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/jobs_city.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="19" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/transit_score.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="40" selection-end="66" vertical-scroll-proportion="0.0">
@@ -834,36 +793,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="14" selection-start="99" selection-end="100" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/living.csv">
       <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/importTransitScore.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="3" selection-start="1996" selection-end="1996" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/citiesList.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="71" column="3" selection-start="1994" selection-end="2004" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -889,23 +824,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="22" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.81632656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="794" selection-end="794" vertical-scroll-proportion="-1.3673469">
+        <state line="14" column="0" selection-start="794" selection-end="794" vertical-scroll-proportion="-0.877551">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/jobs_city.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="19" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/citiesList.csv">
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="71" column="3" selection-start="1994" selection-end="2004" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/importTransitScore.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="29" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/importJobOpennings.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="30" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0">
+        <state line="24" column="40" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="22" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.81632656">
+        <state line="6" column="62" selection-start="163" selection-end="163" vertical-scroll-proportion="0.11873351">
           <folding />
         </state>
       </provider>
