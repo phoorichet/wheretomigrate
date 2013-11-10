@@ -22,43 +22,60 @@ html, body {
   }
 }
 
-#panel {
+#panel-main {
   position: absolute;
   top: 5px;
   left: 85px;
   z-index: 5;
-  background-color: #fff;
-  padding: 0 5px;
-  border: 1px solid #999;
+  // background-color: #fff;
+  // border: 1px solid #999;
+  width: 300px;
+
+  // ul {
+  //   list-style: none;
+  //   margin: 0;
+  //   padding: 0;
+  // }
+
+  // li {
+  //   padding: 2px 8px;
+  // }
+  // li:hover {
+  // background: lightgray;
+  // }
+  // li:active {
+  //   background: darkgray;
+  // }
+
+  // .covered {
+  //   background: orange;
+  // }
+
+  // a {
+  //   text-decoration: none;
+  //   color: #000;
+  // }
+  // div {
+  //   display: inline-block;
+  // }
+
 }
-#panel ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+.row-padding {
+  padding: 0px 5px;
 }
-#panel li {
-  padding: 2px 8px;
+
+#main-view-factor {
 }
-#panel .covered {
-  background: orange;
-}
-#panel a {
-  text-decoration: none;
-  color: #000;
-}
-#panel li:hover {
-  background: lightgray;
-}
-#panel li:active {
-  background: darkgray;
-}
-#panel div {
-  display: inline-block;
+
+#legend-gradient-container {
+ display: inline-block;
 }
 
 #legend_gradient {
   width: 100px;
   height: 10px;
+  display: inline-block;
 }
 
 .redToGreen {
