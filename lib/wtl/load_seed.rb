@@ -139,3 +139,27 @@ def load_us_counties
   puts "  => Imported County #{count} records"
 
 end
+
+def calculate_crime_size
+  crime_attr = [:violent, :murder, :forcible_rape, :robbery, :aggravated_assault, :property_crime, :burglary, :larcenytheft, :motor_vehicle_theft, :arson]
+  Crime.all.each do |c|
+    # Calculat total crimes
+    total = 0
+    crime_attr.each do |attr|
+      if c[attr] == nil
+        c[attr] = 0
+      end
+      total += c[attr] 
+    end
+    c.total = total
+    c.save
+  end
+end
+
+def normalize_crime_size
+  max_total = Crime.maximum("total")
+  Crime.all.each do |c|
+    c.size = Float(c.total)/max_total
+    c.save
+  end
+end
