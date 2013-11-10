@@ -2,14 +2,14 @@
   <div class="panel-heading">Migrant Heaven</div>
   <div class="panel-body">
     <div class="row row-padding">
-      What do you want to consider?
+      Which factor would you like to consider?
     </div>
     <div class="row row-padding">
       <form id="main-view-factor">
         <select name="factorList" onchange="getData(this.value)" class="form-control">
           <option value="jobs_cities">Job openings</option>
-          <option value="crimes">Crime rates</option>
           <option value="cost_livings">Cost of livings</option>
+          <option value="crimes">Crime rates</option>
           <optgroup label="Races">
             <option value="race_bangladeshi">Bangladeshi</option>
             <option value="race_bhutanese">Bhutanese</option>
@@ -59,8 +59,9 @@
 var LATLNG_USA = new google.maps.LatLng(39.092969,-97.697296);
 var MY_MAPTYPE_ID = 'custom_style';
 var INIT_ZOOM_LEVEL = 5;
-// <=3: 35000, 4: 25000, 5: 15000, 6: 11000, 7: 6000, 8: 4000, >=9: 3000
-var ZOOM_TO_RADIUS = [35000,35000,35000,35000,25000,15000,11000,6000,4000,3000];
+var MIN_ZOOM_LEVEL = 5;
+var MAX_ZOOM_LEVEL = 8;
+var ZOOM_TO_RADIUS = [0,0,0,0,0,20000,16000,9000,6000];
 var FILL_OPACITY = 0.5;
 var STROKE_OPACITY = 1;
 var STROKE_WEIGHT = 0.5;
@@ -117,6 +118,8 @@ function initialize() {
   ];
   window.MigrantHeaven.map = new google.maps.Map(document.getElementById('map-canvas'), {
     zoom: INIT_ZOOM_LEVEL,
+    maxZoom: 9,
+    minZoom: 5,
     center: LATLNG_USA,
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
