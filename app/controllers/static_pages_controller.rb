@@ -3,6 +3,9 @@ class StaticPagesController < ApplicationController
   end
 
   def city
+	#race should be one of these:  
+	# :bangladeshi, :bhutanese, :burmese, :cambodian, :chinese, :filipino, :hmong, :indian, :indonesian, 
+	# :japanese, :korean, :laotian, :malaysian, :nepalese, :pakistani, :srilankan, :taiwanese, :thai, :vietnamese
 
     city = params[:city]
     raceName = params[:race]
