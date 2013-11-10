@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/sferik/multi_xml
+  revision: c7e6fb06d957d2dde3400e1c4856e2fdf2604807
+  specs:
+    multi_xml (0.5.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -116,6 +122,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   httparty
   jquery-rails
+  multi_xml!
   pg
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
