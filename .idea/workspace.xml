@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1c2093b-c289-4594-b82c-c7de14ab8376" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/tasks/importJobOpennings.rake" afterPath="$PROJECT_DIR$/lib/tasks/importJobOpenings.rake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dump/jobs_cities.yml" afterPath="$PROJECT_DIR$/db/dump/jobs_cities.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="f1c2093b-c289-4594-b82c-c7de14ab8376" name="Default" comment="" />
     <ignored path="wheretomigrate.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384021157962" ignored="false" />
