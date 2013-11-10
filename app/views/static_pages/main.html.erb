@@ -9,7 +9,7 @@
     </div>
     <div class="row row-padding">
       <form id="main-view-factor">
-        <select name="factorList" onchange="factorOnChange(this)" class="form-control">
+        <select name="factorList" onchange="getData(this.value)" class="form-control">
           <option value="jobs_cities">Job openings</option>
           <option value="crimes">Crime rates</option>
           <option value="cost_livings">Cost of livings</option>
@@ -63,173 +63,185 @@
 
 <script>
 
+// Constants
+var LATLNG_USA = new google.maps.LatLng(39.092969,-97.697296);
+var MY_MAPTYPE_ID = 'custom_style';
+var INIT_ZOOM_LEVEL = 5;
+// <=3: 35000, 4: 25000, 5: 15000, 6: 11000, 7: 6000, 8: 4000, >=9: 3000
+var ZOOM_TO_RADIUS = [35000,35000,35000,35000,25000,15000,11000,6000,4000,3000];
+var FILL_OPACITY = 0.5;
+var STROKE_OPACITY = 1;
+var STROKE_WEIGHT = 0.5;
+
+// Namespace for variables in Migrant Heaven project
+window.MigrantHeaven = {};
+window.MigrantHeaven.mapCircles = [];
+window.MigrantHeaven.currentFactor = 'jobs_cities';
+
+// Always pad zero to the hex conversion result
 function toHex(input) {
   var result = input.toString(16);
   return (result.length < 2)?('0'+result):result;
 }
 
+// Convert 0-255 into hex 0x00-0xff
 function toRGColor(input) {
-  var r = (input<0.5)?255:Math.ceil(255*(1-input)/0.5);
-  var g = (input<0.5)?Math.ceil(255*input/0.5):255;
-  var result = '#'+toHex(r)+toHex(g)+'00';
+  var reverse = (window.MigrantHeaven.currentFactor === 'crimes' || 
+    window.MigrantHeaven.currentFactor === 'cost_livings');
+
+  var c1 = (input<0.5)?255:Math.ceil(255*(1-input)/0.5);
+  var c2 = (input<0.5)?Math.ceil(255*input/0.5):255;
+  var red = (reverse)?c2:c1;
+  var green = (reverse)?c1:c2;
+  var result = '#'+toHex(red)+toHex(green)+'00';
   return result;
 }
 
-var map;
-var LATLNG_USA = new google.maps.LatLng(39.092969,-97.697296);
-var MY_MAPTYPE_ID = 'custom_style';
-var RADIUS = 11000;
-var RADIUS_RATIO = 4.0;
-var clusters = [];
-
+// Initialize function after the page is loaded
 function initialize() {
+  // Custom map style
   var featureOpts = [
-    // {
-    //   elementType: 'geometry.fill',
-    //   stylers: [
-    //     { hue: '#ff0000' },
-    //     { visibility: 'on' },
-    //   ]
-    // },
     {
-      featureType: 'poi',
+      // makes the map much simpler!
+      featureType: 'poi', 
       stylers: [
         { visibility: 'off' },
       ]
     },
     {
-      featureType: 'road.local',
+      // remove annoying green things
+      featureType: 'landscape.natural.landcover', 
       stylers: [
         { visibility: 'off' },
       ]
     },
     {
-      featureType: 'landscape.natural.landcover',
-      stylers: [
-        { visibility: 'off' },
-      ]
-    },
-    {
-      featureType: 'landscape.natural.terrain',
+      // remove annoying green things
+      featureType: 'landscape.natural.terrain', 
       stylers: [
         { visibility: 'off' },
       ]
     },
   ];
-
-  map = new google.maps.Map(document.getElementById('map-canvas'), {
-    zoom: 5,
+  window.MigrantHeaven.map = new google.maps.Map(document.getElementById('map-canvas'), {
+    zoom: INIT_ZOOM_LEVEL,
     center: LATLNG_USA,
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
     },
     mapTypeId: MY_MAPTYPE_ID
   });
-
   var styledMapOptions = {
     name: 'Custom Style'
   };
-
   var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+  window.MigrantHeaven.map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 
-  map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+  // Info window
+  window.MigrantHeaven.infoWindow = new google.maps.InfoWindow();
 
-  // Map zoom event
-  google.maps.event.addListener(map, 'zoom_changed', function() {
-    resizeClusters(map.getZoom());
+  // Capture map zoom event to resize circles
+  google.maps.event.addListener(window.MigrantHeaven.map, 'zoom_changed', function() {
+    resizeCircles(window.MigrantHeaven.map.getZoom());
   });
 
-    // Load first factor to view
-    //getData("jobs_cities");
+  // Load first factor to view
+  getData(window.MigrantHeaven.currentFactor);
+}
+
+// Get data from selected factor
+function getData(factor_name) {
+  // Show loading indicator
+  $('#loading').fadeIn();
+
+  // Change legend gradient
+  if (factor_name === 'crimes' || factor_name === 'cost_livings') {
+    $('#legend_gradient').removeClass('redToGreen');
+    $('#legend_gradient').addClass('greenToRed');
+  } else {
+    $('#legend_gradient').removeClass('greenToRed');
+    $('#legend_gradient').addClass('redToGreen');
   }
 
-  /* Get data from selected factor */
-  function getData(factor_name) {
+  // Remove previous circles. Show a loading indicator.
+  // Hide the indicator and draw circles when data arrives.
+  removeCircles();
+  $.ajax({
+    url: factor_name+".json",
+    cache: false,
+    success: function (data, textStatus, jqXHR) {
+      drawCircles(data);
+      $('#loading').fadeOut();
+    },
+    error: function (data, textStatus, jqXHR) {
+      $('#loading').fadeOut();
+    },
+    dataType: 'json',
+  });
 
-    // Show loading indicator
-    $('#loading').fadeIn();
+  // Set current factor to global variable for later use
+  window.MigrantHeaven.currentFactor = factor_name;
+}
 
-    // Change legend gradient
-    if (factor_name === 'crime' || factor_name === 'cost_livings') {
-      $('#legend_gradient').removeClass('redToGreen');
-      $('#legend_gradient').addClass('greenToRed');
-    } else {
-      $('#legend_gradient').removeClass('greenToRed');
-      $('#legend_gradient').addClass('redToGreen');
-    }
+// Clear cluster markers
+function removeCircles() {
+  for (i=0; i<window.MigrantHeaven.mapCircles.length; i++) {
+    window.MigrantHeaven.mapCircles[i].setMap(null);
+  }
+  window.MigrantHeaven.mapCircles = [];
+}
 
-    // Remove previous clusters. Show a loading indicator.
-    // Hide the indicator and draw clusters when data arrives.
-    removeClusters();
-    $.ajax({
-      url: factor_name+".json",
-      cache: false,
-      success: function (data, textStatus, jqXHR) {
-        drawClusters(data);
-        $('#loading').fadeOut();
-      },
-      error: function (data, textStatus, jqXHR) {
-        $('#loading').fadeOut();
-      },
-      dataType: 'json',
+// Resize circles when the map is zoomed
+function resizeCircles(zoom_level) {
+  var r;
+  if (zoom_level >= ZOOM_TO_RADIUS.length)
+    r = ZOOM_TO_RADIUS[ZOOM_TO_RADIUS.length-1];
+  else
+    r = ZOOM_TO_RADIUS[zoom_level];
+  for (i=0; i<window.MigrantHeaven.mapCircles.length; i++) {
+    window.MigrantHeaven.mapCircles[i].setRadius(r);
+  }
+}
+
+// Draw circles
+function drawCircles(data) {
+  // Normalize raw data size to representing fillColor
+  var maxSize = data[0].size;
+  for (i=1; i<data.length; i++) {
+    if (data[i].size > maxSize)
+      maxSize = data[i].size;
+  }
+  var normalizedSize = [];
+  for (i=0; i<data.length; i++) {
+    normalizedSize[i] = data[i].size/maxSize;
+  }
+
+  for (i=0; i<data.length; i++) {
+    // Draw device's position
+    var latLng = new google.maps.LatLng(data[i].lat, data[i].lng)
+    window.MigrantHeaven.mapCircles[i] = new google.maps.Circle({
+      map: window.MigrantHeaven.map,
+      strokeColor: toRGColor(normalizedSize[i]),
+      strokeOpacity: STROKE_OPACITY,
+      strokeWeight: STROKE_WEIGHT,
+      fillColor: toRGColor(normalizedSize[i]),
+      fillOpacity: FILL_OPACITY,
+      center: latLng,
+      radius: ZOOM_TO_RADIUS[INIT_ZOOM_LEVEL],
+      position: latLng, // essential for infoWindow's position
+      infoWindowHtml: data[i].html,
+    });
+    // Clicking on a circle activates an info window
+    google.maps.event.addListener(window.MigrantHeaven.mapCircles[i], 'click', function() {
+      console.log(this.center);
+      window.MigrantHeaven.infoWindow.setContent(this.infoWindowHtml);
+      window.MigrantHeaven.infoWindow.open(window.MigrantHeaven.map, this);
     });
 
   }
+}
 
-  // Resize clusters when the map is zoomed
-  // <=3: 35000, 4: 25000, 5: 15000, 6: 11000, 7: 6000, 8: 4000, >=9: 3000
-  var zoomToRadius = [35000,35000,35000,35000,25000,15000,11000,6000,4000,3000];
-  function resizeClusters(zoom_level) {
-    var r;
-    if (zoom_level > 9)
-      r = zoomToRadius[zoomToRadius.length-1];
-    else
-      r = zoomToRadius[zoom_level];
-    for (i=0; i<clusters.length; i++) {
-      clusters[i].setRadius(r);
-    }
-  }
+/* Initial Google Maps after the page is loaded */
+google.maps.event.addDomListener(window, 'load', initialize);
 
-  // Clear cluster markers
-  function removeClusters() {
-    for (i=0; i<clusters.length; i++) {
-      clusters[i].setMap(null);
-    }
-    clusters = [];
-  }
-
-  // Draw clusters
-  function drawClusters(data) {
-
-    for (var i=0; i<data.length; i++) {
-      // Draw device's position
-      clusters[i] = new google.maps.Circle({
-        map: map,
-        strokeColor: toRGColor(data[i].size),
-        strokeOpacity: 1.0,
-        strokeWeight: 1,
-        fillColor: toRGColor(data[i].size),
-        fillOpacity: 0.5,
-        center: new google.maps.LatLng(data[i].lat, data[i].lng),
-        radius: RADIUS,
-      });
-
-      // Info window
-      var infowindow = new google.maps.InfoWindow({
-        position: new google.maps.LatLng(data[i].lat, data[i].lng),
-        content: clusters[i].html
-      });
-      google.maps.event.addListener(clusters[i], 'click', function() {
-        infowindow.open(map,clusters[i]);
-      });
-    }
-  }
-
-  /* Initial Google Maps after the page is loaded */
-  google.maps.event.addDomListener(window, 'load', initialize);
-
-  function factorOnChange(f) {
-    getData(f.value);
-  }
-
-  </script>
+</script>
