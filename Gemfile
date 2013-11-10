@@ -4,6 +4,7 @@ gem 'yaml_db'
 gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'httparty'
+gem 'multi_xml', :git => 'https://github.com/sferik/multi_xml'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -52,9 +53,9 @@ end
 
 
 # Bootstrap 3
-# gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
+gem 'anjlab-bootstrap-rails', '~> 3.0.2.0', :require => 'bootstrap-rails'
 
 
 # Angular
-# gem 'angularjs-rails'
+gem 'angularjs-rails'
 

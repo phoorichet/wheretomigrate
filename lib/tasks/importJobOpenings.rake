@@ -4,7 +4,7 @@ require 'rexml/document'
 
 
 desc "Import teams from csv file"
-task :import => [:environment] do
+task :importJobOpenings => [:environment] do
 
   file = "db/citiesList.csv"
   count=0
@@ -21,7 +21,8 @@ task :import => [:environment] do
 			@jobsCity.latitude=coordinates[0].to_f
 			@jobsCity.longitude=coordinates[1].to_f
 
-			@jobsCity.population=row[3]
+			row[3].gsub!(',','') if row[3].is_a?(String)
+			@jobsCity.population = row[3].to_i
 
 					#uri="http://api.careerbuilder.com/v1/jobsearch?DeveloperKey=WDHL04X6PSQYRX0JT0MS&Category=JN051"
 			uri = URI.parse("http://api.careerbuilder.com/v1/jobsearch?DeveloperKey=WDHL04X6PSQYRX0JT0MS&Category=JN051&Location="+coordinates[0]+"::"+coordinates[1])
