@@ -4,7 +4,7 @@ require 'rexml/document'
 
 
 desc "Import teams from csv file"
-task :import => [:environment] do
+task :importJobOpenings => [:environment] do
 
   file = "db/citiesList.csv"
   count=0
