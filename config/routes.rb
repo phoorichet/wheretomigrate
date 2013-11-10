@@ -1,4 +1,7 @@
 Wheretomigrate::Application.routes.draw do
+  resources :transit_scores
+
+
   resources :crimes
   resources :cost_livings
   resources :races
