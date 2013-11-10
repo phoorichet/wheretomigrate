@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cityname:</b>
+  <%= @transit_score.cityName %>
+</p>
+
+<p>
+  <b>Statename:</b>
+  <%= @transit_score.stateName %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @transit_score.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @transit_score.longitude %>
+</p>
+
+<p>
+  <b>Transit score:</b>
+  <%= @transit_score.transit_score %>
+</p>
+
+
+<%= link_to 'Edit', edit_transit_score_path(@transit_score) %> |
+<%= link_to 'Back', transit_scores_path %>

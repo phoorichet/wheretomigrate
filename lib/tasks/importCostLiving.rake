@@ -1,7 +1,5 @@
 require 'csv'
 
-
-
 desc "Import teams from csv file"
 task :importCostLiving => [:environment] do
 
@@ -9,9 +7,8 @@ task :importCostLiving => [:environment] do
   CSV.foreach(file, :headers => true) do |row|
 
 #|| count>0
-  	
-  	
-  	  	@costLiving=CostLiving.new
+
+		@costLiving=CostLiving.new
 		@costLiving.cityName=row[0]
 		@costLiving.lat=row[1].to_f
 		@costLiving.long=row[2].to_f
@@ -24,14 +21,5 @@ task :importCostLiving => [:environment] do
 		@costLiving.healthcare=row[9].to_f
 
 		@costLiving.save
-
-	
   end
-
-
-
-
-
-
-
 end

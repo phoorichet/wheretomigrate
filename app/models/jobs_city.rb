@@ -6,10 +6,8 @@ def as_json options={}
  {
    lat: latitude,
    lng: longitude,
-   size: numberJobs.to_f / JobsCity.maximum("numberJobs"),
+   size: numberJobs,
    html: cityName+ "<br>"+"Job opennings: "+numberJobs.to_s
-
-  
  }
 end
 
