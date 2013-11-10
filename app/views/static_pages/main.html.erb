@@ -1,41 +1,55 @@
-
-<div id="panel">
-  <h1>Migrant Heaven</h1>
-  <form id="mainForm">
-    View factor:
-    <select name="factorList" onchange="factorOnChange(this)">
-      <option value="jobs_cities">Job openings</option>
-      <option value="crimes">Crime rates</option>
-      <option value="cost_livings">Cost of livings</option>
-      <optgroup label="Races">
-        <option value="race_bangladeshi">Bangladeshi</option>
-        <option value="race_bhutanese">Bhutanese</option>
-        <option value="race_burmese">Burmese</option>
-        <option value="race_cambodian">Cambodian</option>
-        <option value="race_chinese">Chinese</option>
-        <option value="race_filipino">Filipino</option>
-        <option value="race_hmong">Hmong</option>
-        <option value="race_indian">Indian</option>
-        <option value="race_indonesian">Indonesian</option>
-        <option value="race_japanese">Japanese</option>
-        <option value="race_korean">Korean</option>
-        <option value="race_laotian">Laotian</option>
-        <option value="race_malaysian">Malaysian</option>
-        <option value="race_nepalese">Nepalese</option>
-        <option value="race_pakistani">Pakistani</option>
-        <option value="race_srilankan">Sri Lankan</option>
-        <option value="race_taiwanese">Taiwanese</option>
-        <option value="race_thai">Thai</option>
-        <option value="race_vietnamese">Vietnamese</option>
-      </optgroup>
-    </select>
-    <div>
+<div class="panel panel-primary" id="panel-main">
+  <div class="panel-heading">Migrant Heaven</div>
+  <div class="panel-body">
+    <div class="row row-padding">
+      What do you want to consider?
+    </div>
+    <div class="row row-padding">
+      <form id="main-view-factor">
+        <select name="factorList" onchange="factorOnChange(this)" class="form-control">
+          <option value="jobs_cities">Job openings</option>
+          <option value="crimes">Crime rates</option>
+          <option value="cost_livings">Cost of livings</option>
+          <optgroup label="Races">
+            <option value="race_bangladeshi">Bangladeshi</option>
+            <option value="race_bhutanese">Bhutanese</option>
+            <option value="race_burmese">Burmese</option>
+            <option value="race_cambodian">Cambodian</option>
+            <option value="race_chinese">Chinese</option>
+            <option value="race_filipino">Filipino</option>
+            <option value="race_hmong">Hmong</option>
+            <option value="race_indian">Indian</option>
+            <option value="race_indonesian">Indonesian</option>
+            <option value="race_japanese">Japanese</option>
+            <option value="race_korean">Korean</option>
+            <option value="race_laotian">Laotian</option>
+            <option value="race_malaysian">Malaysian</option>
+            <option value="race_nepalese">Nepalese</option>
+            <option value="race_pakistani">Pakistani</option>
+            <option value="race_srilankan">Sri Lankan</option>
+            <option value="race_taiwanese">Taiwanese</option>
+            <option value="race_thai">Thai</option>
+            <option value="race_vietnamese">Vietnamese</option>
+          </optgroup>
+        </select>
+      </form>
+    </div>
+    <div class="row row-padding">
       Low
       <div id="legend_gradient"></div>
       High
     </div>
-  </form>
-</div>
+    <br/>
+    <div class="row row-padding">
+      <!-- Search form -->
+      <div class="input-group">
+        <input type="text" class="form-control" title="Search for a city/county" placeholder="Enter a city or county">
+        <span class="input-group-btn"><button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button></span>
+      </div>
+    </div>  
+  </div><!-- end div.panel-body -->
+</div><!-- end panel panel-primary -->
+
 <div id="map-canvas"></div>
 <div id="loading"><%= image_tag 'mf_progress_radar.gif', :alt => 'loading' %></div>
 
@@ -118,7 +132,7 @@ function initialize() {
   });
 
     // Load first factor to view
-    getData("jobs_cities");
+    //getData("jobs_cities");
   }
 
   /* Get data from selected factor */
