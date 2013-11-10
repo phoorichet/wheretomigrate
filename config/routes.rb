@@ -36,6 +36,7 @@ Wheretomigrate::Application.routes.draw do
   
 
   match 'test' => "Home#index"
+  match 'city' => "static_pages#city"
 
   root :to => "static_pages#main"
 
