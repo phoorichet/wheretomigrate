@@ -10,6 +10,8 @@ class StaticPagesController < ApplicationController
     city = params[:city]
     raceName = params[:race]
 
+
+	transitScore=TransitScore.where("cityname like ?","%#{city}%").first
 	cityCostLiving=CostLiving.where("cityname like ?","%#{city}%").first
 	jobs=JobsCity.where("cityname like ?","%#{city}%").first
 	county_id=City.where("city like ?","%#{city}%").first.county.id
@@ -17,13 +19,19 @@ class StaticPagesController < ApplicationController
 	race=Race.find_by_county_id(county_id)
 	raceMaxNumber=Race.maximum(raceName)
 	if 	cityCostLiving.nil? || jobs.nil? || crime.nil? || race.nil? 
-     render json: {}
-    else
+    	render json: {}
+    elsif transitScore.nil? 
+		result={ :costLiving => cityCostLiving.size, :jobs => jobs.numberJobs.to_f / JobsCity.maximum("numberJobs"),
+		:crime => crime.size, :raceNumber => race.name(raceName).to_f/raceMaxNumber }
+		render json: result
 	
-	result={ :costLiving => cityCostLiving.size, :jobs => jobs.numberJobs.to_f / JobsCity.maximum("numberJobs"),
-		:crime => crime.size, :raceNumber => race.name(raceName).to_f/raceMaxNumber  }
-	#puts cityCostLiving.compositeIndex
-	render json: result
+	else
+
+		result={ :costLiving => cityCostLiving.size, :jobs => jobs.numberJobs.to_f / JobsCity.maximum("numberJobs"),
+		:crime => crime.size, :raceNumber => race.name(raceName).to_f/raceMaxNumber, 
+		:transitScore => transitScore.transit_score / TransitScore.maximum("transit_score")}
+		render json: result
+
 	end
   end
 
