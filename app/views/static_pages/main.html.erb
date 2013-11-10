@@ -62,32 +62,37 @@ var clusters = [];
 
 function initialize() {
   var featureOpts = [
-  // {
-  //   stylers: [
-  //   { hue: '#111111' },
-  //   { visibility: 'simplified' },
-  //   { gamma: 0.5 },
-  //   { weight: 0.5 }
-  //   ]
-  // },
-  {
-    elementType: 'labels',
-    stylers: [
-    { visibility: 'on' }
-    ]
-  },
-  {
-    featureType: 'landscape',
-    stylers: [
-    { color: '#333333' }
-    ]
-  },
-  {
-    featureType: 'landscape.natural.landcover',
-    stylers: [
-    { color: '#333333' }
-    ]
-  },
+    // {
+    //   elementType: 'geometry.fill',
+    //   stylers: [
+    //     { hue: '#ff0000' },
+    //     { visibility: 'on' },
+    //   ]
+    // },
+    {
+      featureType: 'poi',
+      stylers: [
+        { visibility: 'off' },
+      ]
+    },
+    {
+      featureType: 'road.local',
+      stylers: [
+        { visibility: 'off' },
+      ]
+    },
+    {
+      featureType: 'landscape.natural.landcover',
+      stylers: [
+        { visibility: 'off' },
+      ]
+    },
+    {
+      featureType: 'landscape.natural.terrain',
+      stylers: [
+        { visibility: 'off' },
+      ]
+    },
   ];
 
   map = new google.maps.Map(document.getElementById('map-canvas'), {
