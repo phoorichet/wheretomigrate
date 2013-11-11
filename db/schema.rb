@@ -85,8 +85,9 @@ ActiveRecord::Schema.define(:version => 20131111202418) do
     t.float    "longitude"
     t.integer  "population"
     t.integer  "numberJobs"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.float    "job_div_pop"
   end
 
   add_index "jobs_cities", ["cityname"], :name => "index_jobs_cities_on_cityName"

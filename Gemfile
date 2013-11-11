@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'yaml_db'
 gem 'rails', '3.2.13'
@@ -17,11 +18,13 @@ group :production do
   gem 'pg'
 end
 
+# Move outside :assets to prevent Heroku app from crashing
 gem 'sass-rails',   '~> 3.2.3'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -31,6 +34,8 @@ group :assets do
 end
 
 
+# skip plugin rejection
+gem 'rails_12factor'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
