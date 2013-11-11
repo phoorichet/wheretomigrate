@@ -2,7 +2,7 @@ var mhControllers;
 
 mhControllers = angular.module('mhControllers', []);
 
-mhControllers.controller('CitySearchCtrl', function($scope, $http) {
+mhControllers.controller('CitySearchCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.city = "";
     $scope.userType = "";
     $scope.city_list = [];
@@ -137,4 +137,4 @@ var legend = svg.append("g")
 
     };// end drawRadar
   }
-);
+]);
