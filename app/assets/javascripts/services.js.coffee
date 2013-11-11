@@ -2,7 +2,7 @@
 mhServices = angular.module('mhServices', ['ngResource'])
 
 mhServices.factory('City', ['$resource', ($resource) ->
-  $resource('cities/:cityName.json', {}, {
-    query: {method:'GET', params:{phoneId:'phones'}, isArray:true}
+  $resource('cities/search', {}, {
+    query: {method:'GET', params:{city:'city'}, isArray:false}
   })
 ])

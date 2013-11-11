@@ -31,40 +31,20 @@ html, body {
   // border: 1px solid #999;
   width: 300px;
 
-  // ul {
-  //   list-style: none;
-  //   margin: 0;
-  //   padding: 0;
-  // }
-
-  // li {
-  //   padding: 2px 8px;
-  // }
-  // li:hover {
-  // background: lightgray;
-  // }
-  // li:active {
-  //   background: darkgray;
-  // }
-
-  // .covered {
-  //   background: orange;
-  // }
-
-  // a {
-  //   text-decoration: none;
-  //   color: #000;
-  // }
-  // div {
-  //   display: inline-block;
-  // }
+  .panel-heading {
+    font-family: 'Pacifico', cursive;
+    color: #fff;
+    font-size: 2em;
+  }
 
 }
 
-.panel-heading {
-  font-family: 'Pacifico', cursive;
-  color: #fff;
-  font-size: 2em;
+#panel-main-right {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 5;
+  width: 450px;
 }
 
 .row-padding {

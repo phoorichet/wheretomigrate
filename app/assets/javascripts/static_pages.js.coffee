@@ -17,4 +17,18 @@ jQuery ->
       $this.removeClass("glyphicon-chevron-up")
       $this.addClass("glyphicon-chevron-down")
 
+  $("#toggle-panel-body-right").on 'click', (e)->
+    $this = $(this)
+    panel = $this.parent().parent().parent().parent().children(".panel-body")
+    console.log panel
+
+    if panel.hasClass("hidden")
+      panel.removeClass("hidden")
+      $this.removeClass("glyphicon-chevron-down")
+      $this.addClass("glyphicon-chevron-up")
+    else
+      panel.addClass("hidden")
+      $this.removeClass("glyphicon-chevron-up")
+      $this.addClass("glyphicon-chevron-down")
+
 

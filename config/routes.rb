@@ -6,7 +6,11 @@ Wheretomigrate::Application.routes.draw do
   resources :cost_livings
   resources :races
   resources :jobs_cities
-  resources :cities
+  resources :cities do
+    collection do
+      get 'search'
+    end
+  end
   resources :counties
 
   # The priority is based upon order of creation:
@@ -36,7 +40,7 @@ Wheretomigrate::Application.routes.draw do
   
 
   match 'test' => "Home#index"
-  match 'city' => "static_pages#city"
+  # match 'city' => "static_pages#city"
 
   root :to => "static_pages#main"
 

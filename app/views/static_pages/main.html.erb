@@ -1,3 +1,4 @@
+<!-- left panel -->
 <div class="panel panel-primary" id="panel-main">
   <div class="panel-heading">
     MigrantHeaven
@@ -43,14 +44,32 @@
       High
     </div>
     <br/>
-    <div class="row row-padding" ng-controller="CitySearchCtrl">
+  </div><!-- end div.panel-body -->
+</div><!-- end panel panel-primary -->
+
+<!-- Right panel -->
+<div class="panel panel-primary" id="panel-main-right"  ng-submit="submit()" ng-controller="CitySearchCtrl">
+  <div class="panel-heading">
+    <div class="row row-padding">
       <!-- Search form -->
-      <div class="input-group">
-        <input type="text" class="form-control" title="Search for a city/county" placeholder="Enter a city or county">
-        <span class="input-group-btn"><button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button></span>
-      </div>
-      {{city}}
-    </div>  
+      <form class="input-group">
+          <input  ng-model="userType" type="text" class="form-control" title="Search for a city/county" placeholder="Enter a city or county">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+          <span id="toggle-panel-body-right" class="glyphicon glyphicon-chevron-down pull-right"></span>
+      </form>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <tt>userType = {{userType}}</tt><br>  
+      <tt>city = {{city}}</tt><br>  
+      <tt>current city = {{current_city}}</tt><br>  
+      <tt>list city = {{city_list}}</tt><br>  
+    </div>
     <div class="row row-padding">
       <!-- Radar chart -->
       <div id="radar-body"></div>

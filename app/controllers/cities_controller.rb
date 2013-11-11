@@ -80,4 +80,69 @@ class CitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search
+    #race should be one of these:  
+    # :bangladeshi, :bhutanese, :burmese, :cambodian, :chinese, :filipino, :hmong, :indian, :indonesian, 
+    # :japanese, :korean, :laotian, :malaysian, :nepalese, :pakistani, :srilankan, :taiwanese, :thai, :vietnamese
+
+    city = params[:city]
+    raceName = params[:race]
+
+    result = Hash.new
+    transitScore = TransitScore.where("cityname like ?","%#{city}%").first
+    result[:transit] ||= transitScore.transit_score.to_f / 100 if transitScore
+
+    cityCostLiving = CostLiving.where("cityname like ?","%#{city}%").first
+    result[:costliving] ||= cityCostLiving.size if cityCostLiving
+
+    jobs = JobsCity.where("cityname like ?","%#{city}%").first
+    jobs_query = "MAX(CAST(numberJobs*1000 AS float)/CAST(population AS float))"
+    jobs_div_pop_max = JobsCity.connection.select_all("SELECT #{jobs_query} FROM jobs_Cities").first[jobs_query]
+    result[:jobs] ||= jobs.numberJobs.to_f / jobs_div_pop_max if jobs
+
+    
+    crime = nil
+    race = nil
+    city_found = City.where("city like ?","%#{city}%").first
+    if city_found && city_found.county
+      puts "  >> city found #{city_found}"
+      county_id = city_found.county.id
+      crime = Crime.find_by_county_id(county_id)
+      race = Race.find_by_county_id(county_id)
+    end
+
+    # Find race max number
+    raceMaxNumber ||= Race.maximum(raceName) if raceName 
+
+    result[:crime] ||= crime.size if crime
+    result[:race] ||=  race.name(raceName).to_f/raceMaxNumber if race && raceName
+           
+
+
+    data = Hash.new
+    # data[:field] = [:costliving, :jobs, :crime, :race, :transit]
+    data[:data] = result
+    data[:city] ||= city_found.city if city_found
+    data[:latitude] ||= city_found.latitude if city_found
+    data[:longitude] ||= city_found.longitude if city_found
+
+
+    render json: data
+
+
+    # if cityCostLiving.nil? || jobs.nil? || crime.nil? || race.nil?
+    #   render json: {}
+    # else
+    #   result={ :costLiving => cityCostLiving.size, :jobs => jobs.numberJobs.to_f / jobs_div_pop_max,
+    #   :crime => crime.size, :raceNumber => race.name(raceName).to_f/raceMaxNumber }
+
+    #   unless transitScore.nil?
+    #     result[:transitScore] = transitScore.transit_score.to_f / 100
+    #   end
+    #   render json: result
+    # end
+
+  end
+
 end
