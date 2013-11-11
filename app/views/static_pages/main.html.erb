@@ -14,6 +14,7 @@
           <option value="jobs_cities">Job openings</option>
           <option value="cost_livings">Cost of livings</option>
           <option value="crimes">Crime rates</option>
+          <option value="transit_scores">Public Transportation</option>
           <optgroup label="Races">
             <option value="race_bangladeshi">Bangladeshi</option>
             <option value="race_bhutanese">Bhutanese</option>
@@ -87,7 +88,7 @@
 var LATLNG_USA = new google.maps.LatLng(39.092969,-97.697296);
 var MY_MAPTYPE_ID = 'custom_style';
 var INIT_ZOOM_LEVEL = 5;
-var MIN_ZOOM_LEVEL = 5;
+var MIN_ZOOM_LEVEL = 4;
 var MAX_ZOOM_LEVEL = 8;
 var ZOOM_TO_RADIUS = [0,0,0,0,0,20000,16000,9000,6000];
 var FILL_OPACITY = 0.5;
@@ -146,8 +147,8 @@ function initialize() {
   ];
   window.MigrantHeaven.map = new google.maps.Map(document.getElementById('map-canvas'), {
     zoom: INIT_ZOOM_LEVEL,
-    maxZoom: 9,
-    minZoom: 5,
+    maxZoom: MAX_ZOOM_LEVEL,
+    minZoom: MIN_ZOOM_LEVEL,
     center: LATLNG_USA,
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
