@@ -88,7 +88,8 @@ class CitiesController < ApplicationController
 
     city = params[:city]
     raceName = params[:race]
-
+    
+    city = city.titleize
     result = Hash.new
     transitScore = TransitScore.where("cityname like ?","%#{city}%").first
     result[:transit] ||= transitScore.transit_score.to_f / 100 if transitScore
