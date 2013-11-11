@@ -90,16 +90,16 @@ class CitiesController < ApplicationController
     raceName = params[:race]
 
     result = Hash.new
-    transitScore = TransitScore.where("cityName like ?","%#{city}%").first
+    transitScore = TransitScore.where("cityname like ?","%#{city}%").first
     result[:transit] ||= transitScore.transit_score.to_f / 100 if transitScore
 
-    cityCostLiving = CostLiving.where("cityName like ?","%#{city}%").first
+    cityCostLiving = CostLiving.where("cityname like ?","%#{city}%").first
     result[:costliving] ||= cityCostLiving.size if cityCostLiving
 
-    jobs = JobsCity.where("cityName like ?","%#{city}%").first
+    jobs = JobsCity.where("cityname like ?","%#{city}%").first
     jobs_query = "MAX(CAST(numberjobs*1000 AS float)/CAST(population AS float))"
     jobs_div_pop_max = JobsCity.connection.select_all("SELECT #{jobs_query} FROM jobs_cities").first[jobs_query]
-    result[:jobs] ||= jobs.numberJobs.to_f / jobs_div_pop_max if jobs
+    result[:jobs] ||= jobs.numberjobs.to_f / jobs_div_pop_max if jobs
 
     
     crime = nil

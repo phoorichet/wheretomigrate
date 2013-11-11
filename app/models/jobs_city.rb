@@ -1,5 +1,5 @@
 class JobsCity < ActiveRecord::Base
-  attr_accessible :cityname, :latitude, :longitude, :numberJobs, :population, :statename
+  attr_accessible :cityname, :latitude, :longitude, :numberjobs, :population, :statename
 
 	# Number of job openings per 1000 people
 	def job_div_pop
@@ -8,7 +8,7 @@ class JobsCity < ActiveRecord::Base
 
 	# Return the maximum of job_div_pop
 	def job_div_pop_max
-		JobsCity.connection.select_all("SELECT MAX(CAST(#{self.numberJobs}*1000 AS float)/CAST(#{self.population} AS float)) FROM jobs_Cities")
+		JobsCity.connection.select_all("SELECT MAX(CAST(#{self.numberJobs}*1000 AS float)/CAST(#{self.population} AS float)) FROM jobs_cities")
 	end
 
 	def as_json options={}
