@@ -34,7 +34,6 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
-    angularjs-rails (1.0.8)
     anjlab-bootstrap-rails (3.0.2.0)
       railties (>= 3.0)
       sass (>= 3.2)
@@ -119,7 +118,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  angularjs-rails
   anjlab-bootstrap-rails (~> 3.0.2.0)
   coffee-rails (~> 3.2.1)
   d3-rails
