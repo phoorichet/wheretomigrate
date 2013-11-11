@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1c2093b-c289-4594-b82c-c7de14ab8376" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20131110080152_add_job_div_pop_to_jobs_cities.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dump/transit_scores.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/importTransitScore.rake" afterPath="$PROJECT_DIR$/lib/tasks/importTransitScore.rake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wheretomigrate.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384137393375" ignored="false" />
     <file path="/jobs_city.rb" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384071812941" ignored="false" />
-    <file path="/importTransitScore.rake" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384078872258" ignored="false" />
+    <file path="/importTransitScore.rake" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384139074971" ignored="false" />
     <file path="/20131109001219_create_transit_scores.rb" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1383955980509" ignored="false" />
     <file path="/transit_score.rb" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1384044148976" ignored="false" />
     <file path="/application_helper.rb" changelist="f1c2093b-c289-4594-b82c-c7de14ab8376" time="1383958753875" ignored="false" />
@@ -47,16 +50,28 @@
       <file leaf-file-name="importTransitScore.rake" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/tasks/importTransitScore.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="40" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.9868074">
+            <state line="23" column="29" selection-start="533" selection-end="533" vertical-scroll-proportion="-0.10204082">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="citiesList.csv" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/citiesList.csv">
+          <provider editor-type-id="text-editor">
+            <state line="71" column="3" selection-start="1994" selection-end="2004" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="62" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0">
+            <state line="4" column="62" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -83,7 +98,7 @@
       <file leaf-file-name="jobs_city.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/jobs_city.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="96" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+            <state line="21" column="96" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -681,9 +696,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1676" height="1028" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1557465" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1557465" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -764,11 +779,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/county.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="0" selection-start="738" selection-end="738" vertical-scroll-proportion="0.48979592">
@@ -779,11 +789,6 @@
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="22" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.81632656" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="794" selection-end="794" vertical-scroll-proportion="-0.877551" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/dump/jobs_cities.yml">
@@ -800,7 +805,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="62" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0">
+        <state line="4" column="62" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -812,17 +817,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/citiesList.csv">
-      <provider editor-type-id="text-editor">
-        <state line="71" column="3" selection-start="1994" selection-end="2004" vertical-scroll-proportion="0.0" />
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/jobs_city.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="96" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+        <state line="21" column="96" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -862,9 +859,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/citiesList.csv">
+      <provider editor-type-id="text-editor">
+        <state line="71" column="3" selection-start="1994" selection-end="2004" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dump/transit_scores.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-6.734694">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="23" selection-start="4172" selection-end="4172" vertical-scroll-proportion="2.6734693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/importTransitScore.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="40" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.9868074">
+        <state line="23" column="29" selection-start="533" selection-end="533" vertical-scroll-proportion="-0.10204082">
           <folding />
         </state>
       </provider>

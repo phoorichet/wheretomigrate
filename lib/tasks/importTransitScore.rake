@@ -11,10 +11,10 @@ desc "Import city name from csv file and store with Transit Score in database"
 task :importTransitScore => [:environment] do
 
   file = "db/citiesList.csv"
-	api_key = "32c14eb566367a4fb67992c425824ba8"
+	api_key = "your_api_key"
 
 	start_index=1
-	number_to_call_API=1
+	number_to_call_API=100
   count=0
   CSV.foreach(file, :headers => true) do |row|
 
@@ -60,7 +60,6 @@ task :importTransitScore => [:environment] do
 		response = HTTParty.get(URI.encode(request_uri))
 
 		# Save information if the response is valid
-		puts response
 		unless response.parsed_response.nil?
 			@score.transit_score=response.parsed_response["transit_score"].to_i
 
@@ -69,5 +68,5 @@ task :importTransitScore => [:environment] do
 			end
 		end
 	end
-	puts count
+	puts "Obtained Transitscore of city number #{start_index} to #{count-1}"
 end
