@@ -1,7 +1,7 @@
 class TransitScore < ActiveRecord::Base
 	include ApplicationHelper
 
-  attr_accessible :cityName, :latitude, :longitude, :stateName, :transit_score
+  attr_accessible :cityname, :latitude, :longitude, :statename, :transit_score
 
 	def state_code
 		convert_state_code(stateName)
@@ -14,7 +14,7 @@ class TransitScore < ActiveRecord::Base
 		 size: transit_score,
 		 html: sprintf("<h2>%s,<small> %s</small></h2>" +
 		 		"<b>Public Transportation Score:</b> <big>%d</big>",
-		 		cityName, stateName, transit_score)
+		 		cityname, statename, transit_score)
 	 }
 	end
 end

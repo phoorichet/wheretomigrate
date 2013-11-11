@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131111083845) do
+ActiveRecord::Schema.define(:version => 20131111203945) do
 
   create_table "cities", :force => true do |t|
     t.string   "zip_code"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20131111083845) do
   add_index "cities", ["county_name"], :name => "index_cities_on_county_name"
 
   create_table "cost_livings", :force => true do |t|
-    t.string   "cityName"
+    t.string   "cityname"
     t.float    "lat"
     t.float    "long"
     t.float    "size"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20131111083845) do
     t.datetime "updated_at",     :null => false
   end
 
-  add_index "cost_livings", ["cityName"], :name => "index_cost_livings_on_cityName"
+  add_index "cost_livings", ["cityname"], :name => "index_cost_livings_on_cityName"
 
   create_table "counties", :force => true do |t|
     t.string   "name"
@@ -79,18 +79,17 @@ ActiveRecord::Schema.define(:version => 20131111083845) do
   add_index "crimes", ["county_id"], :name => "index_crimes_on_county_id"
 
   create_table "jobs_cities", :force => true do |t|
-    t.string   "cityName"
-    t.string   "stateName"
+    t.string   "cityname"
+    t.string   "statename"
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "population"
     t.integer  "numberJobs"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.float    "job_div_pop"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "jobs_cities", ["cityName"], :name => "index_jobs_cities_on_cityName"
+  add_index "jobs_cities", ["cityname"], :name => "index_jobs_cities_on_cityName"
 
   create_table "races", :force => true do |t|
     t.integer  "county_id"
@@ -123,8 +122,8 @@ ActiveRecord::Schema.define(:version => 20131111083845) do
   add_index "races", ["county_id"], :name => "index_races_on_county_id"
 
   create_table "transit_scores", :force => true do |t|
-    t.string   "cityName"
-    t.string   "stateName"
+    t.string   "cityname"
+    t.string   "statename"
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "transit_score"
@@ -132,6 +131,6 @@ ActiveRecord::Schema.define(:version => 20131111083845) do
     t.datetime "updated_at",    :null => false
   end
 
-  add_index "transit_scores", ["cityName"], :name => "index_transit_scores_on_cityName"
+  add_index "transit_scores", ["cityname"], :name => "index_transit_scores_on_cityName"
 
 end

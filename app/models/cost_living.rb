@@ -1,5 +1,5 @@
 class CostLiving < ActiveRecord::Base
-  attr_accessible :compositeIndex, :groceryItems, :healthcare, :housing, :cityName, :lat, :long, :size, :transportation, :utilities
+  attr_accessible :compositeIndex, :groceryItems, :healthcare, :housing, :cityname, :lat, :long, :size, :transportation, :utilities
 
   def html
     sprintf("<h2>%s</h2>" + 
