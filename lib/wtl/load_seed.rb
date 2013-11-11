@@ -128,7 +128,7 @@ def load_us_counties
     data[:id] = Integer(line[:county_id])
     data[:name] = line[:name].upcase if line[:name]
     data[:geo_id] = line[:geo_id]
-    data[:geometry] = line[:geometry]
+    # data[:geometry] = line[:geometry]
     data[:state_id] = Integer(line[:state_id]) # State ID
     data[:state] = line[:state].upcase().strip() if line[:state] # State Abbr
 
