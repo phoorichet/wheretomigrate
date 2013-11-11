@@ -100,7 +100,7 @@ class CitiesController < ApplicationController
     jobs = JobsCity.where("cityname like ?","%#{city}%").first
     jobs_query = "MAX(CAST(numberjobs*1000 AS float)/CAST(population AS float))"
     jobs_div_pop_max = JobsCity.connection.select_all("SELECT #{jobs_query} FROM jobs_cities").first[jobs_query]
-    result[:jobs] ||= jobs.numberjobs.to_f / jobs_div_pop_max if jobs
+    result[:jobs] ||= jobs.numberjobs.to_f / jobs_div_pop_max if jobs and jobs_div_pop_max
 
     
     crime = nil
