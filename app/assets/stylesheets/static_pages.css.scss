@@ -61,6 +61,12 @@ html, body {
 
 }
 
+.panel-heading {
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  font-size: 2em;
+}
+
 .row-padding {
   padding: 0px 5px;
 }
@@ -110,3 +116,16 @@ html, body {
   margin-top: -90px;
   display:none;
 }
+
+#rader-body {
+  // overflow: hidden;
+  // margin: 0;
+  // font-size: 14px;
+  // font-family: "Helvetica Neue", Helvetica;
+}
+
+#radar-chart {
+  // position: absolute;
+  // top: 50px;
+  // left: 100px;
+}	

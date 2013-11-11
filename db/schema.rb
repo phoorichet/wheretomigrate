@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131110071531) do
+ActiveRecord::Schema.define(:version => 20131110080152) do
 
   create_table "cities", :force => true do |t|
     t.string   "zip_code"
@@ -86,8 +86,9 @@ ActiveRecord::Schema.define(:version => 20131110071531) do
     t.float    "longitude"
     t.integer  "population"
     t.integer  "numberJobs"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.float    "job_div_pop"
   end
 
   add_index "jobs_cities", ["cityName"], :name => "index_jobs_cities_on_cityName"

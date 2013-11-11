@@ -17,7 +17,9 @@ class JobsCity < ActiveRecord::Base
 		 lng: longitude,
 		 size: job_div_pop,
 		 pop: population,
-		 html: "<h1>" + cityName + "</h1>" + "Job openings per 1000 people: "+job_div_pop.to_s
+		 html: sprintf("<h2>%s,<small> %s</small></h2>" + 
+		 		"<b>Job openings:</b> <big>%.2f</big> per thousand people", 
+		 		cityName, stateName, job_div_pop)
 	 }
 	end
 end
