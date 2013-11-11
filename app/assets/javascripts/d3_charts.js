@@ -16,12 +16,12 @@ var d = [
 			{axis:"Job Opening",value:0.59},
 			{axis:"Crime Rate",value:0.56},
 			{axis:"Cost of Living",value:0.42},
-			{axis:"Transits",value:0.34},
+			{axis:"Public Transportation",value:0.34},
 		  ],[
 			{axis:"Job Opening",value:0.48},
 			{axis:"Crime Rate",value:0.41},
 			{axis:"Cost of Living",value:0.27},
-			{axis:"Transits",value:0.28},
+			{axis:"Public Transportation",value:0.28},
 
 		  ]
 		];

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1c2093b-c289-4594-b82c-c7de14ab8376" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/main.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/main.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/transit_score.rb" afterPath="$PROJECT_DIR$/app/models/transit_score.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/d3_charts.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/d3_charts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wheretomigrate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +49,16 @@
       <file leaf-file-name="main.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/static_pages/main.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="62" selection-start="712" selection-end="712" vertical-scroll-proportion="-9.375">
+            <state line="51" column="96" selection-start="2480" selection-end="2480" vertical-scroll-proportion="-21.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="d3_charts.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/d3_charts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="30" selection-start="224" selection-end="224" vertical-scroll-proportion="0.30612245">
               <folding />
             </state>
           </provider>
@@ -64,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="transit_score.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="transit_score.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/transit_score.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="33" selection-start="373" selection-end="373" vertical-scroll-proportion="0.29683378">
+            <state line="15" column="33" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -118,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/lib/tasks/import.rake" />
         <option value="$PROJECT_DIR$/db/dump/cities.yml" />
         <option value="$PROJECT_DIR$/lib/tasks/importCostLiving.rake" />
         <option value="$PROJECT_DIR$/db/migrate/20131109001219_create_transit_scores.rb" />
@@ -132,8 +140,9 @@
         <option value="$PROJECT_DIR$/app/models/jobs_city.rb" />
         <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/importTransitScore.rake" />
-        <option value="$PROJECT_DIR$/app/views/static_pages/main.html.erb" />
         <option value="$PROJECT_DIR$/app/models/transit_score.rb" />
+        <option value="$PROJECT_DIR$/app/views/static_pages/main.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/d3_charts.js" />
       </list>
     </option>
   </component>
@@ -771,13 +780,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131103185927_create_cost_livings.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="25" selection-start="346" selection-end="346" vertical-scroll-proportion="0.24489796">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="62" selection-start="85" selection-end="85" vertical-scroll-proportion="0.019788919">
@@ -857,13 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static_pages/main.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="62" selection-start="712" selection-end="712" vertical-scroll-proportion="-9.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/transit_scores_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.81632656">
@@ -880,7 +875,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/transit_score.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="33" selection-start="373" selection-end="373" vertical-scroll-proportion="0.29683378">
+        <state line="15" column="33" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/main.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="96" selection-start="2480" selection-end="2480" vertical-scroll-proportion="-21.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/d3_charts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="30" selection-start="224" selection-end="224" vertical-scroll-proportion="0.30612245">
           <folding />
         </state>
       </provider>
