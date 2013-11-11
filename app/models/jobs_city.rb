@@ -3,12 +3,12 @@ class JobsCity < ActiveRecord::Base
 
 	# Number of job openings per 1000 people
 	def job_div_pop
-		( numberJobs.to_f / population ) * 1000
+		( numberjobs.to_f / population ) * 1000
 	end
 
 	# Return the maximum of job_div_pop
 	def job_div_pop_max
-		JobsCity.connection.select_all("SELECT MAX(CAST(#{self.numberJobs}*1000 AS float)/CAST(#{self.population} AS float)) FROM jobs_cities")
+		JobsCity.connection.select_all("SELECT MAX(CAST(#{self.numberjobs}*1000 AS float)/CAST(#{self.population} AS float)) FROM jobs_cities")
 	end
 
 	def as_json options={}
