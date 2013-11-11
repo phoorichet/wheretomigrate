@@ -61,5 +61,5 @@ gem 'anjlab-bootstrap-rails', '~> 3.0.2.0', :require => 'bootstrap-rails'
 
 
 # Angular
-gem 'angularjs-rails'
+# gem 'angularjs-rails'
 

@@ -8,7 +8,7 @@ mhControllers.controller('CitySearchCtrl', function($scope, $http) {
     $scope.city_list = [];
     $scope.current_city = null;
     $scope.submit = function() {
-      console.log('submit');
+      // console.log('submit');
       this.city = this.userType;
       self = this;
       $http.get('/cities/search?city=' + this.city).success(function(data){
@@ -47,8 +47,8 @@ for(var i=0; i < this.city_list.length; i++){
   ];
   d.push(factors);
 }
-console.log(LegendOptions);
-console.log(d);
+// console.log(LegendOptions);
+// console.log(d);
 
 //Data
 // var d = [

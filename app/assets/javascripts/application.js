@@ -13,8 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require angular
-//= require angular-resource
 //= require d3
 //= require radar_chart
 //= require_tree .
