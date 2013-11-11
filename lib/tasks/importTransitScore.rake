@@ -11,10 +11,10 @@ desc "Import city name from csv file and store with Transit Score in database"
 task :importTransitScore => [:environment] do
 
   file = "db/citiesList.csv"
-	api_key = "32c14eb566367a4fb67992c425824ba8"
+	api_key = "your_api_key"
 
-	start_index=36
-	number_to_call_API=44
+	start_index=1
+	number_to_call_API=100
   count=0
   CSV.foreach(file, :headers => true) do |row|
 
@@ -49,17 +49,10 @@ task :importTransitScore => [:environment] do
 		@score.latitude=coordinates[0].to_f
 		@score.longitude=coordinates[1].to_f
 
-		# Eliminate invalid state code
+		# Skip if state name does not yield valid state code
 		if @score.state_code.nil?
 			next
 		end
-
-=begin
-		uri = URI.parse(URI.encode("http://transit.walkscore.com/transit/score/?lat="+coordinates[0]+"&lon="+coordinates[1]+
-																 "&city="+@score.cityName+"&state="+@score.state_code+"&wsapikey="+api_key))
-			http = Net::HTTP.new(uri.host, uri.port)
-			response = http.request(Net::HTTP::Get.new(uri.request_uri))
-=end
 
 		# Obtain Transitscore from Walkscore API
 		request_uri = "http://transit.walkscore.com/transit/score/?lat="+coordinates[0]+"&lon="+coordinates[1]+
@@ -75,5 +68,5 @@ task :importTransitScore => [:environment] do
 			end
 		end
 	end
-	puts count
+	puts "Obtained Transitscore of city number #{start_index} to #{count-1}"
 end
