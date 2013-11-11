@@ -15,6 +15,10 @@ mhControllers.controller('CitySearchCtrl', function($scope, $http) {
         self.current_city = data;
         if (self.current_city.city !== null) {
           self.city_list.push(self.current_city);
+          if (data.latitude != null && data.longitude != null){
+            var latlng = new google.maps.LatLng(data.latitude, data.longitude);
+            window.MigrantHeaven.map.panTo(latlng);
+          }
         }
         // Refresh radar
         self.drawRadar();
@@ -66,7 +70,7 @@ console.log(d);
 var mycfg = {
   w: w,
   h: h,
-  maxValue: 1.0,
+  maxValue: 0.2,
   mixVallue: 0.0,
   levels: 5,
   ExtraWidthX: 300
