@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131111203945) do
+ActiveRecord::Schema.define(:version => 20131111205025) do
 
   create_table "cities", :force => true do |t|
     t.string   "zip_code"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(:version => 20131111203945) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "population"
-    t.integer  "numberJobs"
+    t.integer  "numberjobs"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
