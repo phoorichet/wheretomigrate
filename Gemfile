@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'yaml_db'
 gem 'rails', '3.2.13'
@@ -28,7 +29,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# Move outside :assets to prevent Heroku app from crashing
 gem 'sass-rails',   '~> 3.2.3'
+
+# skip plugin rejection
+gem 'rails_12factor'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
