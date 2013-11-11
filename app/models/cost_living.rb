@@ -9,7 +9,7 @@ class CostLiving < ActiveRecord::Base
         "<b>Housing Index:</b> <big>%.1f</big><br>" + 
         "<b>Transportation Index:</b> <big>%.1f</big><br>" + 
         "<b>Utilities Index:</b> <big>%.1f</big><br>",
-        cityName, compositeIndex.to_f, groceryItems.to_f, healthcare.to_f, housing.to_f, transportation.to_f, utilities.to_f)
+        cityname, compositeIndex.to_f, groceryItems.to_f, healthcare.to_f, housing.to_f, transportation.to_f, utilities.to_f)
   end  		
 
   def as_json options={}
