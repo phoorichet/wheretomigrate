@@ -21,6 +21,9 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+# Move outside :assets to prevent Heroku app from crashing
+  gem 'sass-rails',   '~> 3.2.3'
+
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -29,8 +32,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-# Move outside :assets to prevent Heroku app from crashing
-gem 'sass-rails',   '~> 3.2.3'
 
 # skip plugin rejection
 gem 'rails_12factor'
