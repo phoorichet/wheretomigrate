@@ -44,12 +44,13 @@
       High
     </div>
     <br/>
-    <div class="row row-padding">
+    <div class="row row-padding" ng-controller="CitySearchCtrl">
       <!-- Search form -->
       <div class="input-group">
         <input type="text" class="form-control" title="Search for a city/county" placeholder="Enter a city or county">
         <span class="input-group-btn"><button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button></span>
       </div>
+      {{city}}
     </div>  
     <div class="row row-padding">
       <!-- Radar chart -->
