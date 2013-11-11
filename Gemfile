@@ -18,11 +18,12 @@ group :production do
   gem 'pg'
 end
 
+# Move outside :assets to prevent Heroku app from crashing
+gem 'sass-rails',   '~> 3.2.3'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-# Move outside :assets to prevent Heroku app from crashing
-  gem 'sass-rails',   '~> 3.2.3'
 
   gem 'coffee-rails', '~> 3.2.1'
 
