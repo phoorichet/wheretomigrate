@@ -1,5 +1,5 @@
 class JobsCity < ActiveRecord::Base
-  attr_accessible :cityName, :latitude, :longitude, :numberJobs, :population, :stateName
+  attr_accessible :cityname, :latitude, :longitude, :numberJobs, :population, :statename
 
 	# Number of job openings per 1000 people
 	def job_div_pop
@@ -19,7 +19,7 @@ class JobsCity < ActiveRecord::Base
 		 pop: population,
 		 html: sprintf("<h2>%s,<small> %s</small></h2>" + 
 		 		"<b>Job openings:</b> <big>%.2f</big> per thousand people", 
-		 		cityName, stateName, job_div_pop)
+		 		cityname, statename, job_div_pop)
 	 }
 	end
 end
